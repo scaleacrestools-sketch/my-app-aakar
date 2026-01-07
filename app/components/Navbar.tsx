@@ -197,36 +197,103 @@ export default function Navbar() {
               </div>
 
               {/* CONSULT ONLINE NOW Button */}
-              <button className="bg-[#C97A7A] hover:bg-[#B86565] text-white font-semibold px-4 py-2 rounded text-sm whitespace-nowrap transition-colors">
+              <button className="hidden sm:block bg-[#C97A7A] hover:bg-[#B86565] text-white font-semibold px-3 md:px-4 py-2 rounded text-xs md:text-sm whitespace-nowrap transition-colors">
                 CONSULT ONLINE NOW
               </button>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => toggleDropdown("mobile")}
-                className="lg:hidden text-gray-700"
+                className="lg:hidden text-gray-700 p-2"
+                aria-label="Toggle mobile menu"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                {openDropdown === "mobile" ? (
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Mobile Menu */}
+      {openDropdown === "mobile" && (
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+          <div className="px-4 py-4 space-y-3">
+            <a
+              href="#design-ideas"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+            >
+              Design Ideas
+            </a>
+            <a
+              href="#magazine"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+            >
+              Magazine
+            </a>
+            <a
+              href="#cities"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+            >
+              Cities
+            </a>
+            <a
+              href="#projects"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+            >
+              Projects
+            </a>
+            <a
+              href="#store-locator"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+            >
+              Store Locator
+            </a>
+            <a
+              href="#shop"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2 flex items-center gap-2"
+            >
+              Shop Furnishings
+              <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded">
+                NEW
+              </span>
+            </a>
+            <button className="w-full bg-[#C97A7A] hover:bg-[#B86565] text-white font-semibold px-4 py-2 rounded text-sm transition-colors mt-2">
+              CONSULT ONLINE NOW
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Secondary Navigation Bar */}
-      <div className="bg-gray-50 border-b border-gray-200">
+      <div className="hidden lg:block bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-6 h-12 overflow-x-auto">
             <a
