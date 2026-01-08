@@ -15,11 +15,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-[34px] sm:top-[40px] left-0 right-0 z-50 bg-white shadow-sm">
+      <nav className="fixed top-[34px] sm:top-[30px] left-0 right-0 z-50 bg-white shadow-sm">
       {/* Top Navigation Bar */}
       <div className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative flex items-center justify-between h-16">
+          <div className="relative flex items-center justify-between h-18">
             {/* Left: Logo */}
             <div className="flex items-center">
               <Link href="/" className="cursor-pointer">
@@ -37,27 +37,12 @@ export default function Navbar() {
 
             {/* Center: Main Navigation Links */}
             <div className="hidden lg:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
-                <div className="relative">
-                  <Link
-                    href="/about-us"
-                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
-                  >
-                    About
-                    {/* <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg> */}
-                  </Link>
-                </div>
+                <Link
+                  href="/about-us"
+                  className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
+                >
+                  About
+                </Link>
 
                 <Link
                   href="/services"
@@ -69,7 +54,7 @@ export default function Navbar() {
                 <div className="relative">
                   <button
                     onClick={() => toggleDropdown("cities")}
-                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
+                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer"
                   >
                     Cities
                     <svg
@@ -203,7 +188,7 @@ export default function Navbar() {
               {/* CONSULT ONLINE NOW Button */}
               <button
                 onClick={() => setShowConsultModal(true)}
-                className="hidden sm:block bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-3 md:px-4 py-2 rounded text-xs md:text-sm whitespace-nowrap transition-colors"
+                className="hidden sm:flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer"
               >
                 CONSULT ONLINE NOW
               </button>
@@ -211,7 +196,7 @@ export default function Navbar() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => toggleDropdown("mobile")}
-                className="lg:hidden text-gray-700 p-2"
+                className="lg:hidden text-gray-700 p-2 cursor-pointer"
                 aria-label="Toggle mobile menu"
               >
                 {openDropdown === "mobile" ? (
@@ -343,7 +328,10 @@ export default function Navbar() {
                 NEW
               </span>
             </a> */}
-            <button className="w-full bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-4 py-2 rounded text-sm transition-colors mt-2">
+            <button
+              onClick={() => setShowConsultModal(true)}
+              className="w-full flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium mt-2 cursor-pointer"
+            >
               CONSULT ONLINE NOW
             </button>
           </div>
