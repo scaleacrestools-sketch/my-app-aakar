@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const heroImages = [
   {
     id: 1,
-    src: "/101.webp",
+    src: "/3d-rendering-classic-european-dining-room-and-livi-2026-01-07-01-44-53-utc.webp",
     alt: "Modern interior design",
     heading: " Where Dreams Take Shape",
     description: "Transform your house into the home you've always ",
