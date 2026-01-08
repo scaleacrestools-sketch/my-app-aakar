@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function ExperienceCentreSection() {
   return (
     <section className="bg-white px-4 sm:px-6 lg:px-10">
-      <div className="flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-6 py-8">
+      <div className="flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-6 py-8 lg:px-22">
         
         {/* Left Image Card */}
         <div className="w-full md:w-[20%] md:min-w-[180px]">

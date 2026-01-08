@@ -1,33 +1,46 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 const services = [
   {
     id: 1,
-    title: "Modular Interiors",
-    description: "Customizable modular solutions for modern living spaces",
+    title: "Expert Guidance, Personalized Plans",
+    description: "Our experienced designers understand your lifestyle, preferences, and budget to create customized interior solutions. Get 3D visualizations of your space before we even start work, so you know exactly what you're getting.",
     image: "/3d-illustration-mockup-photo-frame-in-living-room-2026-01-07-00-56-05-utc.webp",
+    chip: "Design Consultation",
   },
   {
     id: 2,
-    title: "Full Home Interiors",
-    description: "Complete interior design solutions for your entire home",
+    title: "Quality That Lasts Generations",
+    description: "We source only the finest materials – from imported laminates and hardware to durable plywood and elegant finishes. Every material comes with quality certification and our 10-year warranty for complete peace of mind.",
     image: "/demo9-slide-2.webp",
+    chip: "Premium Materials",
   },
   {
     id: 3,
-    title: "Luxury Interiors",
-    description: "Premium design solutions for sophisticated living spaces",
+    title: "Skilled Craftsmen, Flawless Execution",
+    description: "Our trained installation teams bring years of experience and attention to detail. We follow strict timelines, maintain cleanliness throughout the project, and ensure every joint, every finish is perfect down to the millimeter.",
     image: "/image_02-1.webp",
+    chip: "Expert Installation",
   },
   {
     id: 4,
-    title: "Renovations",
-    description: "Transform your existing space with expert renovation services",
+    title: "We're Here Long After Installation",
+    description: "Your relationship with us doesn't end at handover. Enjoy dedicated after-sales service, quick resolution of any concerns, and regular maintenance support. Because your satisfaction is our long-term commitment.",
     image: "/Image-Section.webp",
+    chip: " After-Sales Support",
   },
 ];
 
 export default function ContentSection() {
+  const [expandedIds, setExpandedIds] = useState<Record<number, boolean>>({});
+
+  const toggleExpand = (id: number) => {
+    setExpandedIds((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
   return (
     <section className="bg-white py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -41,7 +54,10 @@ export default function ContentSection() {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-          {services.map((service) => (
+          {services.map((service) => {
+            const isExpanded = !!expandedIds[service.id];
+
+            return (
             <div
               key={service.id}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer group"
@@ -53,33 +69,42 @@ export default function ContentSection() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-              </div>
-              <div className="p-3 sm:p-4 md:p-6">
-                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-1 sm:mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm mb-2 sm:mb-3 md:mb-4 leading-tight sm:leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="flex items-center text-[#D2A68A] font-medium group-hover:translate-x-2 transition-transform">
-                  <span className="text-[10px] sm:text-xs md:text-sm">Explore</span>
-                  <svg
-                    className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-1 sm:ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+                <div className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 z-10">
+                  <span className="bg-[#6D3A22] text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 rounded-full text-[8px] sm:text-[10px] md:text-xs font-medium shadow-md">
+                    {service.chip}
+                  </span>
                 </div>
               </div>
+              <div className="p-3 sm:p-4 md:p-6">
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#6D3A22] mb-1 sm:mb-2">
+                  {service.title}
+                </h3>
+                <p
+                  className="text-gray-600 text-[9px] sm:text-[10px] md:text-xs mb-2 sm:mb-3 md:mb-4 leading-tight sm:leading-relaxed"
+                  style={
+                    isExpanded
+                      ? {}
+                      : {
+                          display: "-webkit-box",
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }
+                  }
+                >
+                  {service.description}
+                </p>
+                <button
+                  type="button"
+                  className="text-[#6D3A22] text-[10px] sm:text-xs md:text-sm font-semibold hover:underline"
+                  onClick={() => toggleExpand(service.id)}
+                >
+                  {isExpanded ? "Show less" : "Read more"}
+                </button>
+              </div>
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </section>
