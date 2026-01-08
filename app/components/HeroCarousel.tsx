@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
-
 const heroImages = [
   {
     id: 1,
@@ -78,7 +78,7 @@ export default function HeroCarousel() {
               className="object-cover"
               priority={index === 0}
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
           </div>
         ))}
       </div>
@@ -101,9 +101,11 @@ export default function HeroCarousel() {
           {heroImages[currentSlide].descriptionSuffix || ""}
         </p>
         <div className="flex justify-center">
-          <button className="flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium w-full sm:w-auto cursor-pointer">
-            BOOK FREE CONSULTATION
-          </button>
+          <Link href="/contact-us">
+            <button className="flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium w-full sm:w-auto cursor-pointer">
+              BOOK FREE CONSULTATION
+            </button>
+          </Link>
         </div>
       </div>
 
