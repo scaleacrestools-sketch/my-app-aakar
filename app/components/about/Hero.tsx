@@ -26,11 +26,11 @@ export default function Hero() {
         </span>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-up-delay">
-          Curating Silence <br /> & Space
+        Creating Homes That Reflect You
         </h1>
 
         <p className="text-stone-200 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
-          We design interiors that breathe. Where architecture meets emotion, and every detail tells a quiet story of luxury.
+        At Aakar Interior, we believe your home should be more than just beautiful – it should work perfectly for your family&apos;s lifestyle.
         </p>
       </div>
     </section>
