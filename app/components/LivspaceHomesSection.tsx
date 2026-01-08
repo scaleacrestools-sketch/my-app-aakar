@@ -6,37 +6,37 @@ import { useState, useEffect, useRef } from "react";
 const homeVideos = [
   {
     id: 1,
-    video: "/blank-picture-frames-mockups-on-white-wall-white-2026-01-05-06-03-49-utc.webp",
+    video: "/video/aakar1.mp4",
     thumbnail: "/blank-picture-frames-mockups-on-white-wall-white-2026-01-05-06-03-49-utc.webp",
     title: "Contemporary 4 BHK penthouse, Noida",
   },
   {
     id: 2,
-    video: "/demo9-slide-2.webp",
+    video: "/video/aakar2.mp4",
     thumbnail: "/demo9-slide-2.webp",
     title: "Elegant 2 BHK flat, Mumbai",
   },
   {
     id: 3,
-    video: "/3d-rendering-luxury-and-modern-yellow-living-room-2026-01-06-10-37-51-utc.webp",
+    video: "/video/aakar3.mp4",
     thumbnail: "/3d-rendering-luxury-and-modern-yellow-living-room-2026-01-06-10-37-51-utc.webp",
     title: "Contemporary 3 BHK house, Gurgaon",
   },
   {
     id: 4,
-    video: "/3d-rendering-tropical-style-resort-suite-living-re-2026-01-06-11-05-14-utc.webp",
+    video: "/video/aakar4.mp4",
     thumbnail: "/3d-rendering-tropical-style-resort-suite-living-re-2026-01-06-11-05-14-utc.webp",
     title: "Modern 3 BHK apartment, Delhi",
   },
   {
     id: 5,
-    video: "/3d-rendering-luxury-and-modern-living-room-with-go-2026-01-06-10-38-41-utc.webp",
+    video: "/video/aakar5.mp4",
     thumbnail: "/3d-rendering-luxury-and-modern-living-room-with-go-2026-01-06-10-38-41-utc.webp",
     title: "Luxury 5 BHK villa, Bangalore",
   },
   {
     id: 6,
-    video: "/3d-rendering-luxury-and-modern-green-living-room-2026-01-07-06-07-35-utc.webp",
+    video: "/video/aakar6.mp4",
     thumbnail: "/3d-rendering-luxury-and-modern-green-living-room-2026-01-07-06-07-35-utc.webp",
     title: "Spacious 2 BHK flat, Pune",
   },
@@ -57,7 +57,7 @@ export default function LivspaceHomesSection() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const itemsPerView = isMobile ? 1 : 5;
+  const itemsPerView = isMobile ? 1 : 4;
   const totalVideos = homeVideos.length;
   
   // Infinite loop - duplicate videos for seamless loop (3 sets)
@@ -94,13 +94,31 @@ export default function LivspaceHomesSection() {
     return () => clearInterval(interval);
   }, [totalVideos]);
 
-  // Play current video and pause others
+  // Play all visible videos (4 on desktop, 1 on mobile)
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
       if (video) {
         const videoIndex = index % totalVideos;
         const currentVideoIndex = currentIndex % totalVideos;
-        if (videoIndex === currentVideoIndex) {
+        
+        // Calculate which videos are visible
+        let isVisible = false;
+        if (isMobile) {
+          // On mobile, only the current video is visible
+          isVisible = videoIndex === currentVideoIndex;
+        } else {
+          // On desktop, 4 videos are visible starting from currentIndex
+          // Check if this video is in the visible range (currentIndex to currentIndex + 4)
+          for (let i = 0; i < itemsPerView; i++) {
+            const checkIndex = (currentVideoIndex + i) % totalVideos;
+            if (videoIndex === checkIndex) {
+              isVisible = true;
+              break;
+            }
+          }
+        }
+        
+        if (isVisible) {
           video.play().catch(() => {
             // Autoplay might be blocked, that's okay
           });
@@ -109,7 +127,7 @@ export default function LivspaceHomesSection() {
         }
       }
     });
-  }, [currentIndex, totalVideos]);
+  }, [currentIndex, totalVideos, itemsPerView, isMobile]);
 
   return (
     <section className="bg-white py-4 sm:py-6 px-2 sm:px-4 lg:px-6 relative overflow-hidden">
@@ -135,7 +153,21 @@ export default function LivspaceHomesSection() {
               {displayVideos.map((video, index) => {
                 const videoIndex = index % totalVideos;
                 const currentVideoIndex = currentIndex % totalVideos;
-                const isActive = videoIndex === currentVideoIndex;
+                
+                // Calculate if this video is visible
+                let isVisible = false;
+                if (isMobile) {
+                  isVisible = videoIndex === currentVideoIndex;
+                } else {
+                  // On desktop, check if this video is in the visible range
+                  for (let i = 0; i < itemsPerView; i++) {
+                    const checkIndex = (currentVideoIndex + i) % totalVideos;
+                    if (videoIndex === checkIndex) {
+                      isVisible = true;
+                      break;
+                    }
+                  }
+                }
                 
                 return (
                   <div
@@ -153,7 +185,7 @@ export default function LivspaceHomesSection() {
                           alt={video.title}
                           fill
                           className="object-cover"
-                          priority={isActive}
+                          priority={isVisible}
                         />
                       </div>
                       
@@ -163,7 +195,7 @@ export default function LivspaceHomesSection() {
                           videoRefs.current[index] = el;
                         }}
                         className="absolute inset-0 w-full h-full object-cover"
-                        autoPlay={isActive}
+                        autoPlay={isVisible}
                         loop
                         muted
                         playsInline
@@ -175,7 +207,6 @@ export default function LivspaceHomesSection() {
                         }}
                       >
                         <source src={video.video} type="video/mp4" />
-                        <source src={video.video} type="video/webm" />
                       </video>
 
                       {/* Gradient overlay */}
@@ -187,21 +218,6 @@ export default function LivspaceHomesSection() {
                           {video.title}
                         </p>
                       </div>
-
-                      {/* Play indicator for inactive videos */}
-                      {!isActive && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
-                          <div className="bg-white/90 rounded-full p-2 sm:p-3">
-                            <svg
-                              className="w-4 h-4 sm:w-5 sm:h-5 text-[#6D3A22]"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </div>
                 );
