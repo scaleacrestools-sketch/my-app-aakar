@@ -32,11 +32,11 @@ export default function ContentSection() {
     <section className="bg-white py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6 sm:mb-8 md:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 px-2">
-            One-stop shop for all things interiors
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#6D3A22] mb-2 sm:mb-3 md:mb-4 px-2">
+            Everything You Need, All Under One Roof
           </h2>
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto px-2">
-            Be it end-to-end interiors, renovation or modular solutions, we have it all for your home or office. With a wide range of furniture & decor, we have your back from start to finish.
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#45291cdd] max-w-5xl mx-auto px-2">
+          From concept to completion, Aakar Interior handles every aspect of your home transformation. No running around, no coordination hassles – just sit back and watch your dream home come to life with our comprehensive interior solutions. 
           </p>
         </div>
 

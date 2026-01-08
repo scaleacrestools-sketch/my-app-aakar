@@ -8,16 +8,26 @@ const heroImages = [
     id: 1,
     src: "/ddbf2826963aff634c43547312423ea966b104bb.webp",
     alt: "Modern interior design",
+    heading: " Where Dreams Take Shape",
+    description: "Transform your house into the home you've always ",
+    highlight: "imagined",
   },
   {
     id: 2,
     src: "/imgi_44_service06-768x569-1.webp",
     alt: "Modern minimalist design",
+    heading: "Beautiful Homes, Beautiful Prices",
+    description: "Get your dream kitchen designed from ",
+    highlight: "₹1.2 Lakhs",
   },
   {
     id: 3,
     src: "/c74e6ec219396fe45062052aa8afd0c22f00395c.webp",
     alt: "Minimalist living room",
+    heading: "Ghar Ki Khubsurati, Dil Se",
+    description: "(The Beauty of Home, From the Heart) Trusted by ",
+    highlight: "5000+ families",
+    descriptionSuffix: " across India",
   },
 ];
 
@@ -68,15 +78,28 @@ export default function HeroCarousel() {
               className="object-cover"
               priority={index === 0}
             />
-            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
           </div>
         ))}
       </div>
 
-      <div className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 z-20 text-center w-full px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg px-2">
-          Home to beautiful interiors
+      <div className="absolute bottom-20 md:bottom-24 lg:bottom-28 left-1/2 transform -translate-x-1/2 z-20 text-center w-full px-4">
+        <h1 
+          key={`heading-${currentSlide}`}
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-3 md:mb-4 drop-shadow-lg px-2 animate-fade-in"
+        >
+          {heroImages[currentSlide].heading}
         </h1>
+        <p 
+          key={`description-${currentSlide}`}
+          className="text-base sm:text-md md:text-lg lg:text-xl text-white/90 mb-4 md:mb-6 drop-shadow-md px-2 max-w-3xl mx-auto animate-fade-in"
+        >
+          {heroImages[currentSlide].description}
+          <span className="text-white font-semibold bg-[#D2A68A]/50 px-2 py-0.5 rounded">
+            {heroImages[currentSlide].highlight}
+          </span>
+          {heroImages[currentSlide].descriptionSuffix || ""}
+        </p>
         <div className="flex justify-center">
           <button className="flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium w-full sm:w-auto cursor-pointer">
             BOOK FREE CONSULTATION
