@@ -77,14 +77,16 @@ export default function HeroCarousel() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg px-2">
           Home to beautiful interiors
         </h1>
-        <button className="bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-4 py-2.5 md:px-8 md:py-4 rounded-md text-sm md:text-lg transition-colors shadow-lg w-full sm:w-auto">
-          BOOK FREE CONSULTATION
-        </button>
+        <div className="flex justify-center">
+          <button className="flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium w-full sm:w-auto cursor-pointer">
+            BOOK FREE CONSULTATION
+          </button>
+        </div>
       </div>
 
       <button
         onClick={prevSlide}
-        className="absolute left-2 sm:left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-4 shadow-lg hover:bg-gray-100 transition-colors hidden sm:flex"
+        className="absolute left-2 sm:left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-4 shadow-lg hover:bg-gray-100 transition-colors hidden sm:flex cursor-pointer"
         aria-label="Previous slide"
       >
         <svg
@@ -104,7 +106,7 @@ export default function HeroCarousel() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-4 shadow-lg hover:bg-gray-100 transition-colors hidden sm:flex"
+        className="absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-20 bg-white rounded-full p-2 md:p-4 shadow-lg hover:bg-gray-100 transition-colors hidden sm:flex cursor-pointer"
         aria-label="Next slide"
       >
         <svg
@@ -127,7 +129,7 @@ export default function HeroCarousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2 rounded-full transition-all ${
+            className={`h-2 rounded-full transition-all cursor-pointer ${
               index === currentSlide
                 ? "w-8 bg-white"
                 : "w-2 bg-white/50 hover:bg-white/75"

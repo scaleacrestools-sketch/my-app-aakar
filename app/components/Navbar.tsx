@@ -34,7 +34,7 @@ export default function Navbar() {
                 <div className="relative">
                   <button
                     onClick={() => toggleDropdown("about")}
-                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
+                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer"
                   >
                     About
                     <svg
@@ -56,7 +56,7 @@ export default function Navbar() {
                 <div className="relative">
                   <button
                     onClick={() => toggleDropdown("services")}
-                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
+                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer"
                   >
                     Services
                     <svg
@@ -78,7 +78,7 @@ export default function Navbar() {
                 <div className="relative">
                   <button
                     onClick={() => toggleDropdown("cities")}
-                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
+                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer"
                   >
                     Cities
                     <svg
@@ -185,14 +185,14 @@ export default function Navbar() {
 
             <div className="flex items-center gap-4">
               {/* CONSULT ONLINE NOW Button */}
-              <button className="hidden sm:block bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-3 md:px-4 py-2 rounded text-xs md:text-sm whitespace-nowrap transition-colors">
+              <button className="hidden sm:flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer">
                 CONSULT ONLINE NOW
               </button>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => toggleDropdown("mobile")}
-                className="lg:hidden text-gray-700 p-2"
+                className="lg:hidden text-gray-700 p-2 cursor-pointer"
                 aria-label="Toggle mobile menu"
               >
                 {openDropdown === "mobile" ? (
@@ -273,7 +273,7 @@ export default function Navbar() {
                 NEW
               </span>
             </a> */}
-            <button className="w-full bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-4 py-2 rounded text-sm transition-colors mt-2">
+            <button className="w-full flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium mt-2 cursor-pointer">
               CONSULT ONLINE NOW
             </button>
           </div>

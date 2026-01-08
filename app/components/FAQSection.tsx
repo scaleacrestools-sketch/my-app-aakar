@@ -63,7 +63,7 @@ export default function FAQSection() {
             >
               <button
                 onClick={() => toggleFAQ(faq.id)}
-                className="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between text-left"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between text-left cursor-pointer"
                 aria-expanded={openFAQ === faq.id}
               >
                 <div className="flex items-start sm:items-center gap-2 sm:gap-4 flex-1 min-w-0">

@@ -69,7 +69,7 @@ export default function LivspaceHomesSection() {
               Latest dream home interiors delivered the hassle-free way
             </p>
           </div>
-          <button className="bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm uppercase transition-colors w-full sm:w-auto whitespace-nowrap">
+          <button className="flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium w-full sm:w-auto whitespace-nowrap cursor-pointer">
             GET FREE QUOTE
           </button>
         </div>
@@ -112,7 +112,7 @@ export default function LivspaceHomesSection() {
                 prev > 0 ? prev - 1 : maxIndex
               );
             }}
-            className="absolute left-2 sm:left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 sm:-translate-x-4 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center"
+            className="absolute left-2 sm:left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 sm:-translate-x-4 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center cursor-pointer"
             aria-label="Previous"
           >
             <svg
@@ -136,7 +136,7 @@ export default function LivspaceHomesSection() {
                 prev < maxIndex ? prev + 1 : 0
               );
             }}
-            className="absolute right-2 sm:right-0 top-1/2 transform -translate-y-1/2 translate-x-2 sm:translate-x-4 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center"
+            className="absolute right-2 sm:right-0 top-1/2 transform -translate-y-1/2 translate-x-2 sm:translate-x-4 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center cursor-pointer"
             aria-label="Next"
           >
             <svg
@@ -160,7 +160,7 @@ export default function LivspaceHomesSection() {
                 <button
                   key={index}
                   onClick={() => setHomeCarouselIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
+                  className={`w-2 h-2 rounded-full transition-colors cursor-pointer ${
                     index === homeCarouselIndex
                       ? "bg-gray-800"
                       : "bg-gray-400"

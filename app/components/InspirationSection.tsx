@@ -109,7 +109,7 @@ export default function InspirationSection() {
 
             <button
               onClick={() => setShowExpandedView(true)}
-              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 md:p-4 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 md:p-4 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center cursor-pointer"
               aria-label="Next"
             >
               <svg
@@ -164,7 +164,7 @@ export default function InspirationSection() {
 
             <button
               onClick={() => setShowExpandedView(false)}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 sm:p-4 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 sm:p-4 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center cursor-pointer"
               aria-label="Back"
             >
               <svg
