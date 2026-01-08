@@ -102,7 +102,7 @@ export default function HeroCarousel() {
         </p>
         <div className="flex justify-center">
           <Link href="/contact-us">
-            <button className="flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium w-full sm:w-auto cursor-pointer">
+            <button className="flex bg-[#D2A68A] hover:bg-[#C4957A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium w-full sm:w-auto cursor-pointer transition-colors">
               BOOK FREE CONSULTATION
             </button>
           </Link>

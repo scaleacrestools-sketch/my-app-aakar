@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-[34px] sm:top-[30px] left-0 right-0 z-50 bg-white shadow-sm">
+      <nav className="fixed top-[22px] sm:top-[28px] left-0 right-0 z-50 bg-white shadow-sm">
       {/* Top Navigation Bar */}
       <div className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,37 +73,37 @@ export default function Navbar() {
                   </button>
                   {openDropdown === "cities" && (
                     <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                      <a
-                        href="/cities/delhi"
+                      <Link
+                        href="/coming-soon"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D2A68A] transition-colors"
                         onClick={() => setOpenDropdown(null)}
                       >
                         Delhi
-                      </a>
-                      <a
-                        href="/cities/agra"
+                      </Link>
+                      <Link
+                        href="/coming-soon"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D2A68A] transition-colors"
                         onClick={() => setOpenDropdown(null)}
                       >
                         Agra
-                      </a>
-                      <a
-                        href="/cities/mathura"
+                      </Link>
+                      <Link
+                        href="/coming-soon"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D2A68A] transition-colors"
                         onClick={() => setOpenDropdown(null)}
                       >
                         Mathura
-                      </a>
+                      </Link>
                     </div>
                   )}
                 </div>
 
-                <a
-                  href="/projects"
+                <Link
+                  href="/coming-soon"
                   className="text-gray-700 hover:text-gray-900 font-medium text-sm"
                 >
                   Projects
-                </a>
+                </Link>
 
                 <Link
                   href="/contact-us"
@@ -188,7 +188,7 @@ export default function Navbar() {
               {/* CONSULT ONLINE NOW Button */}
               <button
                 onClick={() => setShowConsultModal(true)}
-                className="hidden sm:flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer"
+                className="hidden sm:flex bg-[#D2A68A] hover:bg-[#C4957A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer transition-colors"
               >
                 CONSULT ONLINE NOW
               </button>
@@ -275,7 +275,7 @@ export default function Navbar() {
               {showCitiesMobile && (
                 <div className="pl-4 space-y-2 mt-2">
                   <Link
-                    href="/cities/delhi"
+                    href="/coming-soon"
                     className="block text-gray-600 hover:text-[#D2A68A] text-sm py-1 transition-colors"
                     onClick={() => {
                       setShowCitiesMobile(false);
@@ -285,7 +285,7 @@ export default function Navbar() {
                     Delhi
                   </Link>
                   <Link
-                    href="/cities/agra"
+                    href="/coming-soon"
                     className="block text-gray-600 hover:text-[#D2A68A] text-sm py-1 transition-colors"
                     onClick={() => {
                       setShowCitiesMobile(false);
@@ -295,7 +295,7 @@ export default function Navbar() {
                     Agra
                   </Link>
                   <Link
-                    href="/cities/mathura"
+                    href="/coming-soon"
                     className="block text-gray-600 hover:text-[#D2A68A] text-sm py-1 transition-colors"
                     onClick={() => {
                       setShowCitiesMobile(false);
@@ -307,12 +307,12 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <a
-              href="/projects"
+            <Link
+              href="/coming-soon"
               className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
             >
               Projects
-            </a>
+            </Link>
             <Link
               href="/contact-us"
               className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
@@ -330,7 +330,7 @@ export default function Navbar() {
             </a> */}
             <button
               onClick={() => setShowConsultModal(true)}
-              className="w-full flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium mt-2 cursor-pointer"
+              className="w-full flex bg-[#D2A68A] hover:bg-[#C4957A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium mt-2 cursor-pointer transition-colors"
             >
               CONSULT ONLINE NOW
             </button>

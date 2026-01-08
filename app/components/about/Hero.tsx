@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-[80vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] min-h-[400px] sm:min-h-[500px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -20,16 +20,16 @@ export default function Hero() {
       <div className="absolute inset-0 bg-stone-900/20 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-        <span className="block text-stone-200 text-sm md:text-base uppercase tracking-[0.2em] mb-4 animate-fade-in-up">
+      <div className="relative z-20 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+        <span className="block text-stone-200 text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] mb-3 sm:mb-4 animate-fade-in-up">
           Est. 2020
         </span>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-up-delay">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight px-2 animate-fade-in-up-delay">
           Curating Silence <br /> & Space
         </h1>
 
-        <p className="text-stone-200 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+        <p className="text-stone-200 text-sm sm:text-base md:text-lg lg:text-xl font-light max-w-2xl mx-auto leading-relaxed px-2 animate-fade-in-up-delay-2">
           We design interiors that breathe. Where architecture meets emotion, and every detail tells a quiet story of luxury.
         </p>
       </div>
