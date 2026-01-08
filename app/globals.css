@@ -3,9 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #C97A7A;
-  --primary-dark: #B86565;
-  --primary-light: #D4A5A5;
+  --primary: #D2A68A;
+  --primary-dark: #C4957A;
+  --primary-light: #E0B8A0;
 }
 
 @theme inline {
@@ -41,4 +41,13 @@ body {
   animation: scroll 30s linear infinite;
   display: flex;
   width: fit-content;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -29,7 +29,7 @@ const services = [
 
 export default function ContentSection() {
   return (
-    <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6 sm:mb-8 md:mb-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 px-2">
@@ -61,7 +61,7 @@ export default function ContentSection() {
                 <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm mb-2 sm:mb-3 md:mb-4 leading-tight sm:leading-relaxed">
                   {service.description}
                 </p>
-                <div className="flex items-center text-[#C97A7A] font-medium group-hover:translate-x-2 transition-transform">
+                <div className="flex items-center text-[#D2A68A] font-medium group-hover:translate-x-2 transition-transform">
                   <span className="text-[10px] sm:text-xs md:text-sm">Explore</span>
                   <svg
                     className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-1 sm:ml-2"

@@ -6,18 +6,18 @@ import { useState, useEffect } from "react";
 const heroImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&q=80",
-    alt: "Modern bedroom interior",
+    src: "/ddbf2826963aff634c43547312423ea966b104bb.webp",
+    alt: "Modern interior design",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1556912172-45b7abe8b7c1?w=1920&q=80",
-    alt: "Living room design",
+    src: "/imgi_44_service06-768x569-1.webp",
+    alt: "Modern minimalist design",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&q=80",
-    alt: "Kitchen interior",
+    src: "/c74e6ec219396fe45062052aa8afd0c22f00395c.webp",
+    alt: "Minimalist living room",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative h-screen w-full pt-20 md:pt-28">
+    <section className="relative h-screen w-full">
       <div className="relative h-full w-full">
         {heroImages.map((image, index) => (
           <div
@@ -61,6 +61,7 @@ export default function HeroCarousel() {
             }`}
           >
             <Image
+            quality={100}
               src={image.src}
               alt={image.alt}
               fill
@@ -72,29 +73,11 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      <div className="absolute top-8 left-8 z-20 hidden md:block">
-        <div className="bg-white rounded-full px-6 py-4 shadow-lg">
-          <div className="flex flex-col items-center text-center">
-            <div className="text-xs font-semibold text-gray-800 mb-1">
-              India&apos;s Most <span className="text-[#C97A7A]">TRUSTED</span> Brand
-            </div>
-            <div className="flex gap-1 mb-1">
-              <span className="text-yellow-400 text-xs">★</span>
-              <span className="text-yellow-400 text-xs">★</span>
-              <span className="text-yellow-400 text-xs">★</span>
-            </div>
-            <div className="text-[10px] text-gray-500">
-              Research by White Page
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 z-20 text-center w-full px-4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg px-2">
           Home to beautiful interiors
         </h1>
-        <button className="bg-[#C97A7A] hover:bg-[#B86565] text-white font-semibold px-4 py-2.5 md:px-8 md:py-4 rounded-md text-sm md:text-lg transition-colors shadow-lg w-full sm:w-auto">
+        <button className="bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-4 py-2.5 md:px-8 md:py-4 rounded-md text-sm md:text-lg transition-colors shadow-lg w-full sm:w-auto">
           BOOK FREE CONSULTATION
         </button>
       </div>

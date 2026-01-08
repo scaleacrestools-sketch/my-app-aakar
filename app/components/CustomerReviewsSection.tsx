@@ -26,7 +26,7 @@ const reviews = [
 
 export default function CustomerReviewsSection() {
   return (
-    <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 sm:mb-10 gap-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
@@ -34,7 +34,7 @@ export default function CustomerReviewsSection() {
           </h2>
           <a
             href="#view-more"
-            className="text-[#C97A7A] hover:text-[#B86565] font-semibold text-base sm:text-lg whitespace-nowrap flex items-center group self-start sm:self-auto"
+            className="text-[#D2A68A] hover:text-[#C4957A] font-semibold text-base sm:text-lg whitespace-nowrap flex items-center group self-start sm:self-auto"
           >
             View More
             <svg

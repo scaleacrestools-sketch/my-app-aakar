@@ -9,6 +9,7 @@ import ExperienceCentreSection from "./components/ExperienceCentreSection";
 import CustomerReviewsSection from "./components/CustomerReviewsSection";
 import LivspaceHomesSection from "./components/LivspaceHomesSection";
 import TrophyCabinetSection from "./components/TrophyCabinetSection";
+import DesignSessionSection from "./components/DesignSessionSection";
 import FAQSection from "./components/FAQSection";
 import Footer from "./components/Footer";
 
@@ -17,10 +18,11 @@ export default function Home() {
     <div className="relative min-h-screen w-full overflow-x-hidden">
       <Navbar />
       <HeroCarousel />
+      <ExperienceCentreSection />
       <ContentSection />
+      <DesignSessionSection />
       <InspirationSection />
       <WhyChooseUsSection />
-      <ExperienceCentreSection />
       <CustomerReviewsSection />
       <LivspaceHomesSection />
       <TrophyCabinetSection />

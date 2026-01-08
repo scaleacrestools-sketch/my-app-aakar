@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
@@ -5,10 +7,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C97A7A] rounded flex items-center justify-center"></div>
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold text-white">AAKAR</h3>
-                <p className="text-xs sm:text-sm text-gray-400">INTERIOR DESIGNERS</p>
+              <div className="relative w-24 h-10 sm:w-32 sm:h-12">
+                <Image
+                  src="/AAKAR-COLOR-scaled.webp"
+                  alt="AAKAR Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
             </div>
             <p className="text-gray-300 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
@@ -16,7 +22,7 @@ export default function Footer() {
             </p>
             <div className="border-t border-gray-700 pt-6">
               <p className="text-gray-400 text-sm font-semibold mb-2">Partnership</p>
-              <a href="#partnership" className="text-white text-sm hover:text-[#C97A7A] transition-colors inline-flex items-center gap-1">
+              <a href="#partnership" className="text-white text-sm hover:text-[#D2A68A] transition-colors inline-flex items-center gap-1">
                 Experience Centre - AAKAR
                 <svg
                   className="w-4 h-4"
@@ -39,12 +45,12 @@ export default function Footer() {
             <h4 className="text-lg font-bold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-gray-300 hover:text-[#C97A7A] transition-colors text-sm">
+                <a href="#about" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-[#C97A7A] transition-colors text-sm">
+                <a href="#contact" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
                   Contact
                 </a>
               </li>
@@ -55,22 +61,22 @@ export default function Footer() {
             <h4 className="text-lg font-bold text-white mb-4">Our Services</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#modular-interiors" className="text-gray-300 hover:text-[#C97A7A] transition-colors text-sm">
+                <a href="#modular-interiors" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
                   Modular Interiors
                 </a>
               </li>
               <li>
-                <a href="#full-home-interiors" className="text-gray-300 hover:text-[#C97A7A] transition-colors text-sm">
+                <a href="#full-home-interiors" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
                   Full Home Interiors
                 </a>
               </li>
               <li>
-                <a href="#luxury-interiors" className="text-gray-300 hover:text-[#C97A7A] transition-colors text-sm">
+                <a href="#luxury-interiors" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
                   Luxury Interiors
                 </a>
               </li>
               <li>
-                <a href="#renovations" className="text-gray-300 hover:text-[#C97A7A] transition-colors text-sm">
+                <a href="#renovations" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
                   Renovations
                 </a>
               </li>
@@ -82,7 +88,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 sm:gap-3">
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#C97A7A] mt-0.5 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#D2A68A] mt-0.5 flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -98,26 +104,26 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 sm:gap-3">
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#C97A7A] mt-0.5 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#D2A68A] mt-0.5 flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                <a href="tel:+919266023436" className="text-gray-300 text-xs sm:text-sm hover:text-[#C97A7A] transition-colors break-all">
+                <a href="tel:+919266023436" className="text-gray-300 text-xs sm:text-sm hover:text-[#D2A68A] transition-colors break-all">
                   +91 9266023436
                 </a>
               </li>
               <li className="flex items-start gap-2 sm:gap-3">
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#C97A7A] mt-0.5 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#D2A68A] mt-0.5 flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <a href="mailto:aakar.interior.officials@gmail.com" className="text-gray-300 text-xs sm:text-sm hover:text-[#C97A7A] transition-colors break-all">
+                <a href="mailto:aakar.interior.officials@gmail.com" className="text-gray-300 text-xs sm:text-sm hover:text-[#D2A68A] transition-colors break-all">
                   aakar.interior.officials@gmail.com
                 </a>
               </li>
@@ -128,7 +134,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/aakarinterior/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-[#C97A7A] hover:bg-[#C97A7A] transition-colors"
+                className="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-[#D2A68A] hover:bg-[#D2A68A] transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -139,7 +145,7 @@ export default function Footer() {
                 href="https://www.instagram.com/aakarinterior_/?igsh=MXI4bnJxb281MWxzYw%3D%3D#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-[#C97A7A] hover:bg-[#C97A7A] transition-colors"
+                className="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-[#D2A68A] hover:bg-[#D2A68A] transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -158,11 +164,11 @@ export default function Footer() {
               <p>© 2026 AAKAR. All rights reserved.</p>
             </div>
             <div className="flex items-center gap-4 text-sm text-gray-300">
-              <a href="#privacy" className="hover:text-[#C97A7A] transition-colors">
+              <a href="#privacy" className="hover:text-[#D2A68A] transition-colors">
                 Privacy Policy
               </a>
               <span>|</span>
-              <a href="#terms" className="hover:text-[#C97A7A] transition-colors">
+              <a href="#terms" className="hover:text-[#D2A68A] transition-colors">
                 Terms
               </a>
             </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -14,39 +15,28 @@ export default function Navbar() {
       {/* Top Navigation Bar */}
       <div className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="relative flex items-center justify-between h-16">
             {/* Left: Logo */}
             <div className="flex items-center">
-              <div className="flex items-center gap-2">
-                {/* Hexagonal Logo */}
-                <div className="relative w-8 h-8">
-                  <svg
-                    viewBox="0 0 32 32"
-                    className="w-8 h-8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16 2L28 8V16L16 22L4 16V8L16 2Z"
-                      fill="#E53E3E"
-                    />
-                    <path
-                      d="M16 10L22 13V19L16 22L10 19V13L16 10Z"
-                      fill="#718096"
-                    />
-                  </svg>
-                </div>
-                <span className="text-xl font-bold text-gray-900">AAKAR</span>
+              <div className="relative h-10 w-32 sm:h-12 sm:w-40">
+                <Image
+                  src="/AAKAR-BLACK-scaled.webp"
+                  alt="AAKAR Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
+            </div>
 
-              {/* Main Navigation Links */}
-              <div className="hidden lg:flex items-center gap-6 ml-10">
+            {/* Center: Main Navigation Links */}
+            <div className="hidden lg:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
                 <div className="relative">
                   <button
-                    onClick={() => toggleDropdown("design-ideas")}
+                    onClick={() => toggleDropdown("about")}
                     className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
                   >
-                    Design Ideas
+                    About
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -65,10 +55,10 @@ export default function Navbar() {
 
                 <div className="relative">
                   <button
-                    onClick={() => toggleDropdown("magazine")}
+                    onClick={() => toggleDropdown("services")}
                     className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
                   >
-                    Magazine
+                    Services
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -115,13 +105,13 @@ export default function Navbar() {
                 </a>
 
                 <a
-                  href="#store-locator"
+                  href="#contact-us"
                   className="text-gray-700 hover:text-gray-900 font-medium text-sm"
                 >
-                  Store Locator
+                  Contact Us
                 </a>
 
-                <div className="relative">
+                {/* <div className="relative">
                   <button
                     onClick={() => toggleDropdown("more")}
                     className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
@@ -141,16 +131,13 @@ export default function Navbar() {
                       />
                     </svg>
                   </button>
-                </div>
+                </div> */}
               </div>
-            </div>
 
             {/* Right: Actions */}
-            <div className="flex items-center gap-4">
-              {/* Vertical Separator */}
+            {/* <div className="flex items-center gap-4">
               <div className="hidden lg:block h-6 w-px bg-gray-300" />
 
-              {/* Shop Furnishings with NEW tag */}
               <a
                 href="#shop"
                 className="hidden lg:flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium text-sm"
@@ -161,7 +148,6 @@ export default function Navbar() {
                 </span>
               </a>
 
-              {/* User Profile Icon */}
               <div className="relative">
                 <button
                   onClick={() => toggleDropdown("profile")}
@@ -195,9 +181,11 @@ export default function Navbar() {
                   </svg>
                 </button>
               </div>
+            </div> */}
 
+            <div className="flex items-center gap-4">
               {/* CONSULT ONLINE NOW Button */}
-              <button className="hidden sm:block bg-[#C97A7A] hover:bg-[#B86565] text-white font-semibold px-3 md:px-4 py-2 rounded text-xs md:text-sm whitespace-nowrap transition-colors">
+              <button className="hidden sm:block bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-3 md:px-4 py-2 rounded text-xs md:text-sm whitespace-nowrap transition-colors">
                 CONSULT ONLINE NOW
               </button>
 
@@ -247,16 +235,16 @@ export default function Navbar() {
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <div className="px-4 py-4 space-y-3">
             <a
-              href="#design-ideas"
+              href="#about"
               className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
             >
-              Design Ideas
+              About
             </a>
             <a
-              href="#magazine"
+              href="#services"
               className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
             >
-              Magazine
+              Services
             </a>
             <a
               href="#cities"
@@ -271,12 +259,12 @@ export default function Navbar() {
               Projects
             </a>
             <a
-              href="#store-locator"
+              href="#contact-us"
               className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
             >
-              Store Locator
+              Contact Us
             </a>
-            <a
+            {/* <a
               href="#shop"
               className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2 flex items-center gap-2"
             >
@@ -284,8 +272,8 @@ export default function Navbar() {
               <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded">
                 NEW
               </span>
-            </a>
-            <button className="w-full bg-[#C97A7A] hover:bg-[#B86565] text-white font-semibold px-4 py-2 rounded text-sm transition-colors mt-2">
+            </a> */}
+            <button className="w-full bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-4 py-2 rounded text-sm transition-colors mt-2">
               CONSULT ONLINE NOW
             </button>
           </div>
@@ -293,7 +281,7 @@ export default function Navbar() {
       )}
 
       {/* Secondary Navigation Bar */}
-      <div className="hidden lg:block bg-gray-50 border-b border-gray-200">
+      {/* <div className="hidden lg:block bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-6 h-12 overflow-x-auto">
             <a
@@ -362,7 +350,7 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 }

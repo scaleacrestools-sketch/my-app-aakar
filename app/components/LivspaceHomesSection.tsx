@@ -58,7 +58,7 @@ export default function LivspaceHomesSection() {
   const maxIndex = Math.ceil(homeImages.length / itemsPerView) - 1;
 
   return (
-    <section className="bg-gray-50 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gray-50 py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 md:mb-10">
           <div className="mb-4 md:mb-0">
@@ -69,7 +69,7 @@ export default function LivspaceHomesSection() {
               Latest dream home interiors delivered the hassle-free way
             </p>
           </div>
-          <button className="bg-[#C97A7A] hover:bg-[#B86565] text-white font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm uppercase transition-colors w-full sm:w-auto whitespace-nowrap">
+          <button className="bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm uppercase transition-colors w-full sm:w-auto whitespace-nowrap">
             GET FREE QUOTE
           </button>
         </div>

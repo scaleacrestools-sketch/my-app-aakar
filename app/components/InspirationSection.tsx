@@ -40,7 +40,7 @@ export default function InspirationSection() {
   const [showExpandedView, setShowExpandedView] = useState(false);
 
   return (
-    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-8 md:mb-10 gap-4">
           <div className="flex-1">
@@ -53,7 +53,7 @@ export default function InspirationSection() {
           </div>
           <a
             href="#view-all"
-            className="text-[#C97A7A] hover:text-[#B86565] font-semibold text-base sm:text-lg whitespace-nowrap flex items-center group self-start sm:self-auto"
+            className="text-[#D2A68A] hover:text-[#C4957A] font-semibold text-base sm:text-lg whitespace-nowrap flex items-center group self-start sm:self-auto"
           >
             View All
             <svg
@@ -226,7 +226,7 @@ function ExpandedInspirationCard({
 }) {
   return (
     <div className={`relative group cursor-pointer ${className || ""}`}>
-      <div className="relative h-[200px] sm:h-[250px] md:h-[280px] lg:h-[320px] w-full rounded-lg overflow-hidden">
+      <div className="relative h-[180px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] w-full rounded-lg overflow-hidden">
         <Image
           src={image}
           alt={title}
