@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
-
 const heroImages = [
   {
     id: 1,
@@ -77,9 +77,11 @@ export default function HeroCarousel() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg px-2">
           Home to beautiful interiors
         </h1>
-        <button className="bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-4 py-2.5 md:px-8 md:py-4 rounded-md text-sm md:text-lg transition-colors shadow-lg w-full sm:w-auto">
-          BOOK FREE CONSULTATION
-        </button>
+        <Link href="/contact-us">
+          <button className="bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold px-4 py-2.5 md:px-8 md:py-4 rounded-md text-sm md:text-lg transition-colors shadow-lg w-full sm:w-auto">
+            BOOK FREE CONSULTATION
+          </button>
+        </Link>
       </div>
 
       <button
