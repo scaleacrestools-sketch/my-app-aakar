@@ -48,7 +48,7 @@ export default function TrophyCabinetSection() {
           <div className="order-2 lg:order-1">
             <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/aakar-1.webp"
+                src="/aakar-award.jpg"
                 alt="Founder"
                 fill
                 className="object-cover"

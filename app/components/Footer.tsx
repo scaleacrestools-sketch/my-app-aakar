@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#6D3A22] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div className="lg:col-span-1">
@@ -20,7 +20,7 @@ export default function Footer() {
             <p className="text-gray-300 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
               Delivering exceptional interior design services with integrity, expertise, and a commitment to transforming your spaces.
             </p>
-            <div className="border-t border-gray-700 pt-6">
+            <div className="border-t border-white/20 pt-6">
               <p className="text-gray-400 text-sm font-semibold mb-2">Partnership</p>
               <a href="#partnership" className="text-white text-sm hover:text-[#D2A68A] transition-colors inline-flex items-center gap-1">
                 Experience Centre - AAKAR
@@ -88,7 +88,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 sm:gap-3">
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#D2A68A] mt-0.5 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#D2A68A] mt-0.5 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -104,7 +104,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 sm:gap-3">
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#D2A68A] mt-0.5 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#D2A68A] mt-0.5 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -116,7 +116,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2 sm:gap-3">
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#D2A68A] mt-0.5 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#D2A68A] mt-0.5 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -134,7 +134,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/aakarinterior/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-[#D2A68A] hover:bg-[#D2A68A] transition-colors"
+                className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-[#D2A68A] hover:bg-[#D2A68A] transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -145,7 +145,7 @@ export default function Footer() {
                 href="https://www.instagram.com/aakarinterior_/?igsh=MXI4bnJxb281MWxzYw%3D%3D#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-[#D2A68A] hover:bg-[#D2A68A] transition-colors"
+                className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-[#D2A68A] hover:bg-[#D2A68A] transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -157,7 +157,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-700">
+      <div className="border-t border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm text-gray-300">
