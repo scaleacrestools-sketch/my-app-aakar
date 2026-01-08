@@ -6,23 +6,23 @@ import Image from "next/image";
 
 export default function ExperienceCentreSection() {
   return (
-    <section className="bg-white px-4 sm:px-6 lg:px-10 md:py-5">
-      <div className="flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-6 py-8 lg:px-22">
+    <section className="bg-white px-4 sm:px-6 lg:px-10 py-6 sm:py-8 md:py-10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4">
         
         {/* Left Image Card */}
-        <div className="w-full md:w-[20%] md:min-w-[180px]">
+        <div className="w-full md:w-[22%] md:min-w-[180px]">
           <Image
             src="/aakar-1.webp"
             alt="AAKAR Interior - Clients Served"
-            width={800}
-            height={300}
-            className="w-full h-[160px] sm:h-[190px] md:h-[230px] rounded-2xl object-contain"
+            width={1000}
+            height={500}
+            className="w-full object-cover"
             priority
           />
         </div>
 
         {/* Right Image Card with Overlay */}
-        <div className="flex-1 relative h-[200px] sm:h-[220px] md:h-[230px] rounded-2xl sm:overflow-hidden">
+        <div className="flex-1 relative rounded-xl overflow-hidden">
           <Image
             src="/aakar-2.webp"
             alt="Who We Are"
@@ -31,16 +31,19 @@ export default function ExperienceCentreSection() {
             priority
           />
 
-          <div className="absolute inset-0 flex items-center px-2 sm:px-4 md:px-6">
+          {/* Gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+
+          <div className="absolute inset-0 flex items-center px-4 sm:px-6 md:px-8">
             <div className="max-w-md">
-              <h2 className="text-sm sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-1 sm:mb-3">
-                <span className="text-[#6D3A22]">Who</span>{" "}
-                <span className="text-[#6D3A22]">We</span>{" "}
-                <span className="text-[#6D3A22]">Are</span>
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 text-white">
+                <span className="text-white">Who</span>{" "}
+                <span className="text-white">We</span>{" "}
+                <span className="text-white">Are</span>
               </h2>
 
-              <p className="text-[#fff8f5] text-[10px] sm:text-sm md:text-base leading-relaxed">
-              With a team of 150+ experienced designers, skilled craftsmen, and dedicated project managers, we handle everything from the first sketch to the final installation. Our transparent pricing, quality materials, and 10-year warranty give you complete peace of mind.
+              <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed drop-shadow-lg">
+                With a team of 150+ experienced designers, skilled craftsmen, and dedicated project managers, we handle everything from the first sketch to the final installation. Our transparent pricing, quality materials, and 10-year warranty give you complete peace of mind.
               </p>
             </div>
           </div>
