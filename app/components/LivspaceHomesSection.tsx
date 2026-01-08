@@ -6,37 +6,37 @@ import { useState, useEffect } from "react";
 const homeImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+    src: "/blank-picture-frames-mockups-on-white-wall-white-2026-01-05-06-03-49-utc.webp",
     alt: "Contemporary 4 BHK penthouse, Noida",
     title: "Contemporary 4 BHK penthouse, Noida",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1556912172-45b7abe8b7c1?w=800&q=80",
+    src: "/demo9-slide-2.webp",
     alt: "Elegant 2 BHK flat, Mumbai",
     title: "Elegant 2 BHK flat, Mumbai",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+    src: "/3d-rendering-luxury-and-modern-yellow-living-room-2026-01-06-10-37-51-utc.webp",
     alt: "Contemporary 3 BHK house, Gurgaon",
     title: "Contemporary 3 BHK house, Gurgaon",
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+    src: "/3d-rendering-tropical-style-resort-suite-living-re-2026-01-06-11-05-14-utc.webp",
     alt: "Modern 3 BHK apartment, Delhi",
     title: "Modern 3 BHK apartment, Delhi",
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80",
+    src: "/3d-rendering-luxury-and-modern-living-room-with-go-2026-01-06-10-38-41-utc.webp",
     alt: "Luxury 5 BHK villa, Bangalore",
     title: "Luxury 5 BHK villa, Bangalore",
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1631889993951-fc3d2e8d3ba8?w=800&q=80",
+    src: "/3d-rendering-luxury-and-modern-green-living-room-2026-01-07-06-07-35-utc.webp",
     alt: "Spacious 2 BHK flat, Pune",
     title: "Spacious 2 BHK flat, Pune",
   },

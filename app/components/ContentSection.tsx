@@ -5,25 +5,25 @@ const services = [
     id: 1,
     title: "Modular Interiors",
     description: "Customizable modular solutions for modern living spaces",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+    image: "/3d-illustration-mockup-photo-frame-in-living-room-2026-01-07-00-56-05-utc.webp",
   },
   {
     id: 2,
     title: "Full Home Interiors",
     description: "Complete interior design solutions for your entire home",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+    image: "/demo9-slide-2.webp",
   },
   {
     id: 3,
     title: "Luxury Interiors",
     description: "Premium design solutions for sophisticated living spaces",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80",
+    image: "/image_02-1.webp",
   },
   {
     id: 4,
     title: "Renovations",
     description: "Transform your existing space with expert renovation services",
-    image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80",
+    image: "/Image-Section.webp",
   },
 ];
 

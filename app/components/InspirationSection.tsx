@@ -6,33 +6,33 @@ import { useState } from "react";
 const expandedInspirations = [
   {
     id: 1,
-    title: "Kids Room",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80",
+    title: "Living Room",
+    image: "/3d-rendering-classic-european-dining-room-and-livi-2026-01-07-01-44-53-utc.webp",
   },
   {
     id: 2,
-    title: "Home Office",
-    image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7c1?w=1200&q=80",
+    title: "Master Bedroom",
+    image: "/3d-rendering-luxury-and-modern-yellow-living-room-2026-01-06-10-37-51-utc.webp",
   },
   {
     id: 3,
-    title: "Guest Bedroom",
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80",
+    title: "False Ceiling",
+    image: "/3d-rendering-luxury-and-modern-green-living-room-2026-01-07-06-07-35-utc.webp",
   },
   {
     id: 4,
-    title: "Foyer",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
+    title: "Homes by Livspace",
+    image: "/3d-rendering-luxury-and-modern-living-room-with-go-2026-01-06-10-38-41-utc.webp",
   },
   {
     id: 5,
-    title: "Dining Room",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80",
+    title: "Wardrobe",
+    image: "/interior-of-modern-design-room-3d-illustration-2026-01-05-05-39-20-utc.webp",
   },
   {
     id: 6,
-    title: "Bathroom",
-    image: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=1200&q=80",
+    title: "Kitchen",
+    image: "/blank-picture-frames-mockups-on-white-wall-white-2026-01-05-06-03-49-utc.webp",
   },
 ];
 
@@ -76,33 +76,33 @@ export default function InspirationSection() {
           <div className="relative">
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2">
               <InspirationCard
-                title="Living Room"
-                image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80"
+                title="Kids Room"
+                image="/3d-illustration-mockup-photo-frame-in-living-room-2026-01-07-00-54-10-utc.webp"
                 className="col-span-1 sm:col-span-1 lg:col-span-3"
               />
               <InspirationCard
-                title="Master Bedroom"
-                image="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80"
+                title="Home Office"
+                image="/3d-illustration-mockup-photo-frame-in-living-room-2026-01-07-00-54-46-utc.webp"
                 className="col-span-1 sm:col-span-1 lg:col-span-1"
               />
               <InspirationCard
-                title="False Ceiling"
-                image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80"
+                title="Guest Bedroom"
+                image="/3d-rendering-luxury-and-modern-yellow-living-room-2026-01-06-10-37-51-utc.webp"
                 className="col-span-2 sm:col-span-1 lg:col-span-1"
               />
               <InspirationCard
-                title="Homes by Livspace"
-                image="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=600&q=80"
+                title="Foyer"
+                image="/Image-Section.webp"
                 className="col-span-1 sm:col-span-1 lg:col-span-1"
               />
               <InspirationCard
-                title="Wardrobe"
-                image="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80"
+                title="Dining Room"
+                image="/image_02-1.webp"
                 className="col-span-1 sm:col-span-1 lg:col-span-1"
               />
               <InspirationCard
-                title="Kitchen"
-                image="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&q=80"
+                title="Bathroom"
+                image="/3d-rendering-luxury-and-modern-living-room-with-go-2026-01-06-10-38-41-utc.webp"
                 className="col-span-2 sm:col-span-2 lg:col-span-3"
               />
             </div>

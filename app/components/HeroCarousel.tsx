@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const heroImages = [
   {
     id: 1,
-    src: "/ddbf2826963aff634c43547312423ea966b104bb.webp",
+    src: "/101.webp",
     alt: "Modern interior design",
     heading: " Where Dreams Take Shape",
     description: "Transform your house into the home you've always ",
@@ -22,7 +22,7 @@ const heroImages = [
   },
   {
     id: 3,
-    src: "/c74e6ec219396fe45062052aa8afd0c22f00395c.webp",
+    src: "/interior-of-modern-design-room-3d-illustration-2026-01-05-05-39-20-utc.webp",
     alt: "Minimalist living room",
     heading: "Ghar Ki Khubsurati, Dil Se",
     description: "(The Beauty of Home, From the Heart) Trusted by ",

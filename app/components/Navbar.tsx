@@ -37,7 +37,7 @@ export default function Navbar() {
                     className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer"
                   >
                     About
-                    <svg
+                    {/* <svg
                       className="w-4 h-4"
                       fill="none"
                       stroke="currentColor"
@@ -49,7 +49,7 @@ export default function Navbar() {
                         strokeWidth={2}
                         d="M19 9l-7 7-7-7"
                       />
-                    </svg>
+                    </svg> */}
                   </button>
                 </div>
 
