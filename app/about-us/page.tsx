@@ -22,12 +22,12 @@ export default function AboutUsPage() {
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
       <Navbar />
-      <main className="pt-[96px] sm:pt-[100px]">
+      <main className="pt-[80px] sm:pt-[96px] md:pt-[100px]">
         <Hero />
         <StorySection />
         <StatsSection />
         <ValuesSection />
-        <TeamSection />
+        {/* <TeamSection /> */}
         <CTASection />
       </main>
       <Footer />

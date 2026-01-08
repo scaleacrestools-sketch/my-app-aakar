@@ -28,24 +28,24 @@ const team = [
 
 export default function TeamSection() {
   return (
-    <section className="pt-8 md:pt-12 pb-12 bg-stone-100">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <div>
-            <h2 className="text-xs font-bold tracking-[0.2em] uppercase text-stone-500 mb-4">
+    <section className="pt-8 sm:pt-10 md:pt-12 pb-12 sm:pb-16 bg-stone-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-12 md:mb-16">
+          <div className="mb-4 md:mb-0">
+            <h2 className="text-xs font-bold tracking-[0.2em] uppercase text-stone-500 mb-3 sm:mb-4">
               The Minds
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-stone-900">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900">
               Meet the Team
             </h3>
           </div>
-          <p className="max-w-md text-stone-500 text-sm mt-6 md:mt-0 text-right md:text-right text-left">
+          <p className="max-w-md text-stone-500 text-sm sm:text-base mt-4 md:mt-0 text-left md:text-right">
             A diverse collective of architects, designers, and dreamers dedicated
             to redefining spatial experiences.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {team.map((member, index) => (
             <div
               key={member.id}
@@ -61,14 +61,14 @@ export default function TeamSection() {
                 />
               </div>
 
-              <div className="mt-6">
-                <h4 className="text-2xl font-bold text-stone-900">
+              <div className="mt-4 sm:mt-6">
+                <h4 className="text-xl sm:text-2xl font-bold text-stone-900">
                   {member.name}
                 </h4>
                 <p className="text-xs uppercase tracking-widest text-stone-500 mt-1">
                   {member.role}
                 </p>
-                <p className="text-stone-600 mt-4 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-0 group-hover:h-auto overflow-hidden">
+                <p className="text-stone-600 mt-3 sm:mt-4 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 h-0 group-hover:h-auto overflow-hidden">
                   {member.bio}
                 </p>
               </div>

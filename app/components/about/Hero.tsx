@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-[80vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] min-h-[400px] sm:min-h-[500px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -20,8 +20,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-stone-900/20 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-        <span className="block text-stone-200 text-sm md:text-base uppercase tracking-[0.2em] mb-4 animate-fade-in-up">
+      <div className="relative z-20 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+        <span className="block text-stone-200 text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] mb-3 sm:mb-4 animate-fade-in-up">
           Est. 2020
         </span>
 

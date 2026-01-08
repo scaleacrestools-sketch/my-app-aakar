@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="bg-[#6D3A22] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
               <div className="relative w-24 h-10 sm:w-32 sm:h-12">
@@ -45,40 +46,19 @@ export default function Footer() {
             <h4 className="text-lg font-bold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
+                <Link href="/about-us" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-bold text-white mb-4">Our Services</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#modular-interiors" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
-                  Modular Interiors
-                </a>
+                <Link href="/services" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
+                  Services
+                </Link>
               </li>
               <li>
-                <a href="#full-home-interiors" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
-                  Full Home Interiors
-                </a>
-              </li>
-              <li>
-                <a href="#luxury-interiors" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
-                  Luxury Interiors
-                </a>
-              </li>
-              <li>
-                <a href="#renovations" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
-                  Renovations
-                </a>
+                <Link href="/contact-us" className="text-gray-300 hover:text-[#D2A68A] transition-colors text-sm">
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>
@@ -164,13 +144,13 @@ export default function Footer() {
               <p>© 2026 AAKAR. All rights reserved.</p>
             </div>
             <div className="flex items-center gap-4 text-sm text-gray-300">
-              <a href="#privacy" className="hover:text-[#D2A68A] transition-colors">
+              <Link href="/privacy-policy" className="hover:text-[#D2A68A] transition-colors">
                 Privacy Policy
-              </a>
+              </Link>
               <span>|</span>
-              <a href="#terms" className="hover:text-[#D2A68A] transition-colors">
-                Terms
-              </a>
+              <Link href="/terms-and-conditions" className="hover:text-[#D2A68A] transition-colors">
+                Terms & Conditions
+              </Link>
             </div>
           </div>
         </div>
