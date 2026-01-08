@@ -80,7 +80,7 @@ export default function ContentSection() {
                   {service.title}
                 </h3>
                 <p
-                  className="text-gray-600 text-[9px] sm:text-[10px] md:text-xs mb-2 sm:mb-3 md:mb-4 leading-tight sm:leading-relaxed"
+                  className="text-gray-600 text-[9px] sm:text-[10px] md:text-xs leading-tight sm:leading-relaxed"
                   style={
                     isExpanded
                       ? {}

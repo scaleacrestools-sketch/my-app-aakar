@@ -49,26 +49,19 @@ export default function DesignSessionSection() {
             Your Dream Home Journey, Simplified in 4 Steps
           </h2>
           <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#45291cdd] max-w-5xl mx-auto px-2">
-          At Aakar Interior, we&apos;ve perfected a seamless process that takes you from inspiration to installation. Our transparent, step-by-step approach ensures you&apos;re involved at every stage while we handle all the complexities. Experience a stress-free transformation where your vision meets our expertise.
-
+            From inspiration to installation, our transparent step-by-step process keeps you involved while we handle the complexities. Experience a stress-free transformation where your vision meets our expertise.
           </p>
         </div>
 
         <div className="relative">
           {/* Cards Container */}
-          <div className="overflow-x-auto lg:overflow-visible scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0">
-            <div className="flex gap-2 lg:grid lg:grid-cols-4 lg:gap-2 xl:gap-3">
-              {designSteps.map((step) => (
-                <div
-                  key={step.id}
-                  className="min-w-[85vw] sm:min-w-[80vw] lg:min-w-0 shrink-0"
-                >
-                  <DesignStepCard
-                    image={step.image}
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 gap-2 sm:gap-2.5 lg:grid-cols-4 lg:gap-3 xl:gap-4">
+            {designSteps.map((step) => (
+              <DesignStepCard
+                key={step.id}
+                image={step.image}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -82,13 +75,14 @@ function DesignStepCard({
   image: string;
 }) {
   return (
-    <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[450px] xl:h-[500px] rounded-lg overflow-hidden">
+    <div className="relative w-full h-[260px] sm:h-[220px] md:h-[280px] lg:h-[380px] xl:h-[420px] rounded-lg overflow-hidden">
       <Image
         src={image}
         alt="Design session step"
         fill
-        className="object-contain"
-        quality={100}
+        className="object-contain p-2 sm:p-3 md:p-4"
+        quality={90}
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
       />
     </div>
   );
