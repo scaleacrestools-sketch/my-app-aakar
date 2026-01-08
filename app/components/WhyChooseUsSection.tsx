@@ -1,119 +1,72 @@
 "use client";
 
+import Image from "next/image";
+
 export default function WhyChooseUsSection() {
   const cards = [
     {
-      icon: (
-        <div className="relative">
-          <svg className="w-16 h-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-[#D2A68A] rounded-full flex items-center justify-center">
-            <span className="text-white text-xs font-bold">2K</span>
-          </div>
-        </div>
-      ),
-      text: "2,000+ designers",
+      title: "Residential",
+      image: "/icon/hose.webp",
+      description: "2,000+ designers",
     },
     {
-      icon: (
-        <div className="relative">
-          <svg className="w-16 h-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <span className="text-[#D2A68A] text-xl font-bold">10</span>
-          </div>
-        </div>
-      ),
-      text: "Flat 10-year warranty¹",
+      title: "Commercial",
+      image: "/icon/offices.webp",
+      description: "Flat 10-year warranty",
     },
     {
-      icon: (
-        <div className="relative">
-          <svg className="w-16 h-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <span className="text-[#D2A68A] text-xl font-bold">45</span>
-          </div>
-          <div className="absolute bottom-0 right-0">
-            <svg className="w-4 h-4 text-[#D2A68A]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" />
-            </svg>
-          </div>
-        </div>
-      ),
-      text: "45-day move-in guarantee²",
+      title: "Hospitality",
+      image: "/icon/hotel.webp",
+      description: "45-day move-in guarantee",
     },
     {
-      icon: (
-        <div className="relative">
-          <svg className="w-16 h-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-          </svg>
-          <div className="absolute top-0 right-0">
-            <svg className="w-6 h-6 text-[#D2A68A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-        </div>
-      ),
-      text: "146 quality checks",
+      title: "Industrial",
+      image: "/icon/indrusty.webp",
+      description: "146 quality checks",
     },
     {
-      icon: (
-        <div className="relative">
-          <svg className="w-16 h-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-          </svg>
-          <div className="absolute -top-2 right-0">
-            <svg className="w-6 h-6 text-[#D2A68A]" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-            </svg>
-          </div>
-        </div>
-      ),
-      text: "1,00,000+ happy homes",
+      title: "Retail",
+      image: "/icon/shop.webp",
+      description: "1,00,000+ happy homes",
     },
     {
-      icon: (
-        <div className="relative">
-          <svg className="w-16 h-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-[#D2A68A] rounded-full flex items-center justify-center">
-            <span className="text-white text-xs font-bold">100</span>
-          </div>
-        </div>
-      ),
-      text: "100+ cities",
+      title: "Warehouse",
+      image: "/icon/warehouse.webp",
+      description: "100+ cities",
     },
   ];
 
   return (
-    <section className="bg-gray-50 py-6 sm:py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="bg-white py-4 sm:py-6 px-4 sm:px-6 lg:px-8 overflow-hidden pb-8 sm:pb-12">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8 sm:mb-12">
-          Why choose us
-        </h2>
+        <div className="text-center mb-4 sm:mb-6 md:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#6D3A22] mb-2 sm:mb-3 md:mb-4 px-2">
+            Transforming Spaces Across Every Segment
+          </h2>
+        </div>
 
-        <div className="relative">
-          <div className="overflow-hidden">
-            <div className="flex animate-scroll gap-4 sm:gap-6">
+        <div className="relative pb-4">
+          <div className="overflow-hidden pb-1">
+            <div className="flex animate-scroll gap-3 sm:gap-4">
               {[...cards, ...cards].map((card, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-56 sm:w-64 bg-white rounded-lg shadow-md p-4 sm:p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
+                  className="shrink-0 w-36 sm:w-40 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#6D3A22]/20 transition-all duration-300 p-4 sm:p-5 flex flex-col items-center group"
                 >
-                  <div className="relative mb-4">
-                    <div className="absolute inset-0 bg-gray-100 rounded-full blur-xl opacity-50"></div>
-                    <div className="relative flex items-center justify-center">
-                      {card.icon}
-                    </div>
+                  <div className="relative mb-3 sm:mb-4 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-[#6D3A22]/5 rounded-full p-2 group-hover:bg-[#6D3A22]/10 transition-colors">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      width={64}
+                      height={64}
+                      className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                    />
                   </div>
-                  <p className="text-gray-700 font-medium text-center text-sm">
-                    {card.text}
+                  <h3 className="text-[#6D3A22] font-semibold text-xs sm:text-sm mb-1.5 sm:mb-2 text-center">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-600 text-center text-[8px] sm:text-[9px] font-normal leading-tight">
+                    {card.description}
                   </p>
                 </div>
               ))}
@@ -124,4 +77,5 @@ export default function WhyChooseUsSection() {
     </section>
   );
 }
+
 

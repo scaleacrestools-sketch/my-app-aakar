@@ -42,7 +42,7 @@ export default function ContentSection() {
   };
 
   return (
-    <section className="bg-white py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#FAF7F4] py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6 sm:mb-8 md:mb-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#6D3A22] mb-2 sm:mb-3 md:mb-4 px-2">

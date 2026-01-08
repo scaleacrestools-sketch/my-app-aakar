@@ -40,24 +40,24 @@ export default function InspirationSection() {
   const [showExpandedView, setShowExpandedView] = useState(false);
 
   return (
-    <section className="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-8 md:mb-10 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 sm:mb-6 gap-3">
           <div className="flex-1">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 md:mb-3">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#6D3A22] mb-2 sm:mb-3 md:mb-4 px-2">
               Inspiration for home interior designs
             </h2>
-            <p className="text-gray-600 text-base sm:text-lg max-w-2xl">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#45291cdd] max-w-5xl px-2">
               Give your home a new look with these interior design ideas curated for you.
             </p>
           </div>
           <a
             href="#view-all"
-            className="text-[#D2A68A] hover:text-[#C4957A] font-semibold text-base sm:text-lg whitespace-nowrap flex items-center group self-start sm:self-auto"
+            className="text-[#6D3A22] hover:text-[#C4957A] font-semibold text-sm sm:text-base whitespace-nowrap flex items-center group self-start sm:self-auto"
           >
             View All
             <svg
-              className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform"
+              className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -109,11 +109,11 @@ export default function InspirationSection() {
 
             <button
               onClick={() => setShowExpandedView(true)}
-              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 md:p-4 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center cursor-pointer"
+              className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-2.5 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center cursor-pointer"
               aria-label="Next"
             >
               <svg
-                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gray-800"
+                className="w-3 h-3 sm:w-4 sm:h-4 text-gray-800"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -129,7 +129,7 @@ export default function InspirationSection() {
           </div>
         ) : (
           <div className="relative">
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
               <ExpandedInspirationCard
                 title={expandedInspirations[0].title}
                 image={expandedInspirations[0].image}
@@ -164,11 +164,11 @@ export default function InspirationSection() {
 
             <button
               onClick={() => setShowExpandedView(false)}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 sm:p-4 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center cursor-pointer"
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 translate-x-2 sm:translate-x-3 bg-white rounded-full p-2 sm:p-2.5 shadow-lg hover:bg-gray-100 transition-colors z-10 flex items-center justify-center cursor-pointer"
               aria-label="Back"
             >
               <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800"
+                className="w-3 h-3 sm:w-4 sm:h-4 text-gray-800"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -199,16 +199,17 @@ function InspirationCard({
 }) {
   return (
     <div className={`relative group cursor-pointer ${className}`}>
-      <div className="relative h-[180px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] w-full rounded-lg overflow-hidden">
+      <div className="relative h-[140px] sm:h-[180px] md:h-[220px] lg:h-[260px] xl:h-[300px] w-full rounded-lg overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3 className="text-white text-xl font-semibold">{title}</h3>
+        <div className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 z-10">
+          <span className="bg-[#6D3A22] text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 rounded-full text-[8px] sm:text-[10px] md:text-xs font-medium shadow-md">
+            {title}
+          </span>
         </div>
       </div>
     </div>
@@ -226,17 +227,17 @@ function ExpandedInspirationCard({
 }) {
   return (
     <div className={`relative group cursor-pointer ${className || ""}`}>
-      <div className="relative h-[180px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] w-full rounded-lg overflow-hidden">
+      <div className="relative h-[140px] sm:h-[180px] md:h-[220px] lg:h-[260px] xl:h-[300px] w-full rounded-lg overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
-          <div className="bg-white px-3 py-1.5 sm:px-4 sm:py-2 rounded shadow-sm">
-            <h3 className="text-gray-900 text-sm sm:text-base font-semibold">{title}</h3>
-          </div>
+        <div className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 z-10">
+          <span className="bg-[#6D3A22] text-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 rounded-full text-[8px] sm:text-[10px] md:text-xs font-medium shadow-md">
+            {title}
+          </span>
         </div>
       </div>
     </div>
