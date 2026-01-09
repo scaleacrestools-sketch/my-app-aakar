@@ -5,39 +5,39 @@ import { useState } from "react";
 const faqs = [
   {
     id: 1,
-    question: "Why do I need an interior designer?",
+    question: "What services does Aakar Interior offer?",
     answer:
-      "An interior designer brings professional expertise to create functional, aesthetically pleasing spaces. They help optimize your space, select appropriate materials, manage your budget effectively, and save you time and effort throughout the design process.",
+      "We offer complete home interior solutions including modular kitchens, wardrobes, bedroom furniture, living room designs, TV units, pooja rooms, storage solutions, false ceilings, lighting, and complete home renovations. We handle everything from design to installation.",
   },
   {
     id: 2,
-    question: "Why is Livspace perfect for your home interior design?",
+    question: "How much does a home interior cost?",
     answer:
-      "Livspace offers end-to-end interior design solutions with a team of experienced designers, a wide range of customizable options, quality materials, and a hassle-free experience from design to installation. We ensure your vision is brought to life efficiently.",
+      "It depends on your home size and materials. Typically, a 2BHK ranges from ₹3-8 lakhs, 3BHK from ₹5-12 lakhs. Modular kitchens start from ₹1.2 lakhs. Book a free consultation for an accurate estimate based on your specific requirements.",
   },
   {
     id: 3,
-    question: "What services are included under home interior design?",
+    question: "How long will my project take?",
     answer:
-      "Home interior design services typically include space planning, 3D design visualization, material selection, furniture and decor curation, modular solutions, false ceiling design, lighting design, and end-to-end project management.",
+      "Modular kitchen: 25-30 days, Single bedroom: 15-20 days, Complete 2BHK: 45-60 days, Complete 3BHK: 60-75 days. We provide a clear timeline upfront and keep you updated with daily progress on WhatsApp.",
   },
   {
     id: 4,
-    question: "How much does home interiors cost?",
+    question: "Do you provide warranty?",
     answer:
-      "The cost of home interiors depends on various factors including the size of your home, scope of work, materials chosen, and customization level. We offer flexible pricing packages and transparent cost breakdowns tailored to your budget and requirements.",
+      "Yes! We offer a comprehensive 10-year warranty on all modular products covering manufacturing defects and hardware issues. We also provide lifetime after-sales support for any queries or maintenance needs.",
   },
   {
     id: 5,
-    question: "What will be the timelines for my project completion?",
+    question: "What materials do you use?",
     answer:
-      "Project timelines vary based on the scope and complexity of your interior design project. Typically, a complete home interior project takes 8-12 weeks from design approval to final installation. We provide a detailed timeline at the start of your project.",
+      "We use premium BWP/BWR waterproof plywood, branded hardware (Hettich/Ebco/Hafele), soft-close hinges, and durable laminates. All materials are sourced from authorized dealers and come with manufacturer warranties. We can show you physical samples.",
   },
   {
     id: 6,
-    question: "What are the trending interior design styles?",
+    question: "Are there any hidden charges?",
     answer:
-      "Current trending interior design styles include modern minimalism, contemporary designs, Scandinavian aesthetics, industrial themes, and biophilic designs. Our designers stay updated with the latest trends and can help you choose a style that reflects your personality and lifestyle.",
+      "No hidden charges at all. Our quotation includes design, materials, hardware, manufacturing, transportation, and installation. Additional costs only arise if you request changes after approval or upgrade materials beyond the original scope.",
   },
 ];
 

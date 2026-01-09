@@ -9,7 +9,7 @@ interface ExperienceCentreSectionProps {
 
 export default function ExperienceCentreSection({
   heading = "Who We Are",
-  paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+  paragraph = "With a team of 150+ experienced designers, skilled craftsmen, and dedicated project managers, we handle everything from the first sketch to the final installation. Our transparent pricing, premium materials, and 10-year warranty give you complete peace of mind.",
   leftImage = "/Group 6.png",
   rightImage = "/Group 7.png",
 }: ExperienceCentreSectionProps = {} as ExperienceCentreSectionProps) {
