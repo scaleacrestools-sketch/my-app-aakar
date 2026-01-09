@@ -3,27 +3,27 @@
 const values = [
   {
     id: "1",
-    title: "Excellence",
+    title: "Quality Without Compromise",
     description:
-      "We pursue perfection in every detail, ensuring that each project meets the highest standards of quality and craftsmanship.",
+      "We use only premium materials and work with skilled craftsmen who take pride in their work. From the hinges on your cabinets to the finish on your walls, every detail meets our high standards. That's why we back our work with a 10-year warranty.",
   },
   {
     id: "2",
-    title: "Innovation",
+    title: "Transparent & Honest Pricing",
     description:
-      "We embrace new ideas and technologies while respecting timeless design principles, creating spaces that are both contemporary and enduring.",
+      "No surprises, no hidden costs. You'll know exactly what you're paying for from day one. Our detailed quotes break down every expense, so you can make informed decisions and plan your budget with confidence.",
   },
   {
     id: "3",
-    title: "Integrity",
+    title: "On-Time, Every Time",
     description:
-      "Transparency and honesty guide our relationships with clients, partners, and team members, building trust through consistent action.",
+      "We respect your time and understand that delays disrupt your life. Our dedicated project managers ensure your project stays on schedule, with regular updates at every milestone. We finish when we promise to finish.",
   },
   {
     id: "4",
-    title: "Collaboration",
+    title: "Customer-First Approach",
     description:
-      "We believe the best designs emerge from close partnerships with our clients, listening deeply to understand their vision and needs.",
+      "Your satisfaction is our success. From the first consultation to final installation, we listen to your needs, answer your questions, and adapt our designs to fit your lifestyle. Our relationship doesn't end at installation – we're here whenever you need us.",
   },
 ];
 

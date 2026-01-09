@@ -2,9 +2,10 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import CTASection from "../components/about/CTASection";
+import ExperienceCentreSection from "../components/ExperienceCentreSection";
 
 const services = [
   {
@@ -37,26 +38,31 @@ const services = [
   },
 ];
 
-const processSteps = [
+const serviceChoices = [
   {
-    num: "01",
-    title: "Discovery",
-    desc: "We begin by understanding your lifestyle, needs, and aesthetic aspirations through deep listening.",
+    need: "For New Homes",
+    service: "Complete Home Interior Package",
+    image: "/pattern/find.svg",
   },
   {
-    num: "02",
-    title: "Concept",
-    desc: "We present initial layouts, mood boards, and material palettes to establish the design direction.",
+    need: "For Kitchen Upgrade",
+    service: "Modular Kitchen Design",
+    image: "/pattern/find.svg",
   },
   {
-    num: "03",
-    title: "Design & Develop",
-    desc: "Detailed drawings, sourcing, and procurement. We refine every element before execution begins.",
+    need: "For Storage Issues",
+    service: "Wardrobe & Storage Solutions",
+    image: "/pattern/find.svg",
   },
   {
-    num: "04",
-    title: "Execution",
-    desc: "Construction oversight, installation, and the final styling reveal where your home comes to life.",
+    need: "For Single Room",
+    service: "Room-wise Interior Design",
+    image: "/pattern/find.svg",
+  },
+  {
+    need: "For Budget Makeover",
+    service: "Renovation & Remodeling",
+    image: "/pattern/find.svg",
   },
 ];
 
@@ -74,85 +80,169 @@ export default function ServicesPage() {
 
       <div className="pt-[80px] sm:pt-[96px] md:pt-[100px]">
         {/* Header */}
-        <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-stone-50 px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 mb-4 sm:mb-6 animate-fade-in-up px-2">
-              Our Expertise
+        <section className="py-6 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#FAF7F4] relative overflow-hidden">
+          {/* Background Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage: 'url(/pattern/flip.svg)',
+              backgroundSize: '600px 600px',
+              backgroundRepeat: 'repeat',
+              backgroundPosition: '0 0',
+            }}
+          />
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-bold text-[#6D3A22] mb-3 sm:mb-4 md:mb-6 px-2">
+              Quality Interiors That Fit Your Budget
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-stone-500 font-light max-w-2xl mx-auto animate-fade-in-up-delay px-2">
-              We offer a comprehensive suite of design services tailored to elevate your living experience, blending functionality with artful aesthetics.
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#45291cdd] max-w-2xl mx-auto px-2">
+            We&apos;ve designed 5,000+ Indian homes and learned what matters most – quality that lasts, designs that work for your lifestyle, and honest pricing. From modular kitchens to complete home makeovers, every project gets the same dedication and care.
+
             </p>
           </div>
         </section>
 
         {/* Services Grid */}
-        <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
-              {services.map((service, idx) => (
+        <section className="pt-6 sm:pt-12 lg:pt-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+          {/* Background Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+
+          />
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              {services.map((service) => (
                 <div
                   key={service.id}
-                  className="group cursor-pointer animate-fade-in-up"
-                  style={{ animationDelay: `${idx * 0.1}s` }}
+                  className="group cursor-pointer bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-[#6D3A22]/10 hover:border-[#6D3A22]/30 relative"
                 >
-                  <div className="aspect-video overflow-hidden bg-stone-100 mb-4 sm:mb-6 relative rounded-sm">
+                  {/* Card Pattern */}
+                  <div 
+                    className="absolute inset-0 opacity-[0.02] pointer-events-none"
+                    style={{
+                      backgroundImage: 'url(/pattern/flip-3.svg)',
+                      backgroundSize: '600px 600px',
+                      backgroundRepeat: 'repeat',
+                      backgroundPosition: '0 0',
+                    }}
+                  />
+                  <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex-1">
-                      <h3 className="text-xl sm:text-2xl font-bold text-stone-900 mb-2 sm:mb-3 group-hover:text-stone-600 transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-sm sm:text-base text-stone-500 font-light leading-relaxed">
-                        {service.description}
-                      </p>
+                  <div className="p-4 sm:p-5 relative z-10">
+                    <h3 className="text-base sm:text-lg font-bold text-[#6D3A22] mb-2 group-hover:text-[#5A2F1A] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#45291cdd] leading-relaxed line-clamp-3">
+                      {service.description}
+                    </p>
+                    <div className="mt-3 flex items-center text-[#6D3A22] text-xs font-medium group-hover:gap-2 transition-all">
+                      <span>Learn more</span>
+                      <svg
+                        className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                     </div>
-                    <svg
-                      className="text-stone-300 w-5 h-5 sm:w-6 sm:h-6 group-hover:text-stone-900 transition-colors flex-shrink-0 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-        {/* Process Section */}
-        <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-stone-900 text-stone-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="mb-10 sm:mb-12 md:mb-16">
-              <h2 className="text-xs font-bold tracking-[0.2em] uppercase text-stone-500 mb-3 sm:mb-4">
-                How We Work
+         {/* Service Description */}
+         <ExperienceCentreSection
+           heading="Everything Your Home Needs, All in One Place"
+           paragraph="From modular kitchens to complete home interiors, we offer end-to-end solutions designed for Indian homes and lifestyles."
+           leftImage="/aakar-1.webp"
+           rightImage="/aakar-2.webp"
+         />
+        {/* How to Choose Section */}
+        <section className="py-6 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+          {/* Background Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage: 'url(/pattern/flip.svg)',
+              backgroundSize: '600px 600px',
+              backgroundRepeat: 'repeat',
+              backgroundPosition: '0 0',
+            }}
+          />
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-6 sm:mb-8 md:mb-12">
+              <h2 className="text-xs sm:text-sm font-semibold tracking-[0.15em] uppercase text-[#6D3A22] mb-3 sm:mb-4 opacity-80">
+                HOW TO CHOOSE YOUR SERVICE
               </h2>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">The Process</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#6D3A22] mb-2 sm:mb-3">
+                Not Sure Which Service You Need?
+              </h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-              {processSteps.map((step, idx) => (
-                <div key={idx} className="relative animate-fade-in-up" style={{ animationDelay: `${idx * 0.1}s` }}>
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#D2A68A] absolute -top-4 sm:-top-6 md:-top-8 -left-1 sm:-left-2 z-0 opacity-30 select-none">
-                    {step.num}
-                  </div>
-                  <div className="relative z-10 pt-6 sm:pt-8">
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">{step.title}</h4>
-                    <p className="text-xs sm:text-sm text-stone-400 leading-relaxed border-t border-stone-800 pt-3 sm:pt-4">
-                      {step.desc}
-                    </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+              {serviceChoices.map((choice, idx) => (
+                <div
+                  key={idx}
+                  className="group relative bg-white rounded-lg  shadow-md hover:shadow-xl transition-all duration-300 border border-[#6D3A22]/10 hover:border-[#6D3A22]/30 cursor-pointer"
+                >
+                  {/* Card Pattern */}
+                  <div 
+                    className="absolute inset-0 opacity-[0.02] pointer-events-none rounded-lg"
+                  />
+                  {/* Content with Icon on Left */}
+                  <div className="relative z-10 flex items-stretch gap-4 sm:gap-5">
+                    {/* Icon Box - Left */}
+                    <div className="shrink-0 flex items-center">
+                      <div className="h-full flex items-center">
+                        <Image
+                          src={choice.image}
+                          alt={choice.service}
+                          width={40}
+                          height={40}
+                          className="h-full w-[100px]"
+                        />
+                      </div>
+                    </div>
+                    {/* Content - Right */}
+                    <div className="flex-1 min-w-0 p-3 flex flex-col justify-center">
+                      {/* Flow Design */}
+                      <div className="space-y-2">
+                        {/* Need Section */}
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full bg-[#6D3A22]/40"></div>
+                          <span className="text-xs sm:text-sm font-medium text-[#6D3A22] opacity-80">
+                            {choice.need}
+                          </span>
+                        </div>
+                        {/* Flow Arrow Line */}
+                        <div className="flex items-center gap-2 pl-1">
+                          <div className="w-px h-4 bg-[#6D3A22]/30"></div>
+                          <svg className="w-4 h-4 text-[#6D3A22] opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                        {/* Service Section */}
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full bg-[#6D3A22]"></div>
+                          <span className="text-sm sm:text-base md:text-lg font-bold text-[#6D3A22] group-hover:text-[#5A2F1A] transition-colors">
+                            {choice.service}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -161,20 +251,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Inquiry CTA */}
-        <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-stone-100 text-center px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900 mb-4 sm:mb-6 px-2">
-            Unsure what you need?
-          </h2>
-          <p className="text-sm sm:text-base text-stone-600 mb-6 sm:mb-8 max-w-xl mx-auto px-2">
-            Every project is unique. Contact us to discuss your specific requirements and we&apos;ll tailor a proposal for you.
-          </p>
-          <Link
-            href="/contact-us"
-            className="inline-block bg-[#D2A68A] hover:bg-[#C4957A] active:bg-[#C4957A] text-white border border-[#D2A68A] hover:border-[#C4957A] px-6 sm:px-8 py-3 sm:py-4 text-xs uppercase tracking-widest transition-all duration-300 rounded-lg min-h-[44px] flex items-center justify-center"
-          >
-            Book a Discovery Call
-          </Link>
-        </section>
+        <CTASection />
       </div>
 
       <Footer />
