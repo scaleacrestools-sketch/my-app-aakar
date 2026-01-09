@@ -21,25 +21,6 @@ export default function Footer() {
             <p className="text-gray-300 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
               Delivering exceptional interior design services with integrity, expertise, and a commitment to transforming your spaces.
             </p>
-            <div className="border-t border-white/20 pt-6">
-              <p className="text-gray-400 text-sm font-semibold mb-2">Partnership</p>
-              <a href="#partnership" className="text-white text-sm hover:text-[#D2A68A] transition-colors inline-flex items-center gap-1">
-                Experience Centre - AAKAR
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
-            </div>
           </div>
 
           <div>
