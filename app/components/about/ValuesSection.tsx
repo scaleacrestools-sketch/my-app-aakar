@@ -33,15 +33,6 @@ export default function ValuesSection() {
       {/* Background Pattern */}
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(90deg, #6D3A22 1px, transparent 1px),
-            linear-gradient(180deg, #6D3A22 1px, transparent 1px),
-            radial-gradient(circle at 1px 1px, #D2A68A 0.5px, transparent 0)
-          `,
-          backgroundSize: '80px 80px, 80px 80px, 40px 40px',
-          backgroundPosition: '0 0, 0 0, 0 0',
-        }}
       />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-6 sm:mb-8 md:mb-12">
@@ -57,17 +48,29 @@ export default function ValuesSection() {
           {values.map((value) => (
             <div
               key={value.id}
-              className="bg-white rounded-lg p-5 sm:p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 group border border-[#6D3A22]/10 hover:border-[#6D3A22]/20"
+              className="bg-white rounded-lg p-5 sm:p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 group border border-[#6D3A22]/10 hover:border-[#6D3A22]/20 relative overflow-hidden"
             >
-              <div className="mb-4 sm:mb-5">
-                <div className="w-12 sm:w-14 h-1 bg-[#6D3A22] mb-4 sm:mb-5 rounded-full"></div>
-                <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#6D3A22] mb-3 sm:mb-4">
-                  {value.title}
-                </h4>
+              {/* Card Pattern */}
+              <div 
+                className="absolute inset-0 opacity-[0.02] pointer-events-none"
+                style={{
+                  backgroundImage: 'url(/pattern/flip-3.svg)',
+                  backgroundSize: '600px 600px',
+                  backgroundRepeat: 'repeat',
+                  backgroundPosition: '0 0',
+                }}
+              />
+              <div className="relative z-10">
+                <div className="mb-4 sm:mb-5">
+                  <div className="w-12 sm:w-14 h-1 bg-[#6D3A22] mb-4 sm:mb-5 rounded-full"></div>
+                  <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#6D3A22] mb-3 sm:mb-4">
+                    {value.title}
+                  </h4>
+                </div>
+                <p className="text-[#45291cdd] text-sm sm:text-base leading-relaxed">
+                  {value.description}
+                </p>
               </div>
-              <p className="text-[#45291cdd] text-sm sm:text-base leading-relaxed">
-                {value.description}
-              </p>
             </div>
           ))}
         </div>

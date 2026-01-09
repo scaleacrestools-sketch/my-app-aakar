@@ -8,15 +8,7 @@ export default function StorySection() {
       {/* Background Pattern */}
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(90deg, #6D3A22 1px, transparent 1px),
-            linear-gradient(180deg, #6D3A22 1px, transparent 1px),
-            radial-gradient(circle at 1px 1px, #D2A68A 0.5px, transparent 0)
-          `,
-          backgroundSize: '80px 80px, 80px 80px, 40px 40px',
-          backgroundPosition: '0 0, 0 0, 0 0',
-        }}
+        
       />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">

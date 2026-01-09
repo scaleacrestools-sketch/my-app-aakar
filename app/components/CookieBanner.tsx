@@ -8,8 +8,18 @@ export default function CookieBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-[#6D3A22] py-1 sm:py-1.5 px-4 sm:px-6 m-0">
-      <div className="max-w-7xl mx-auto flex items-center justify-center h-full">
+    <div className="fixed top-0 left-0 right-0 z-60 bg-[#6D3A22] py-1 sm:py-1.5 px-4 sm:px-6 m-0 overflow-hidden">
+      {/* Background Pattern */}
+      <div 
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: 'url(/pattern/flip-2.svg)',
+          backgroundSize: '600px 600px',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: '0 0',
+        }}
+      />
+      <div className="max-w-7xl mx-auto flex items-center justify-center h-full relative z-10">
         <p className="text-white text-xs sm:text-sm text-center">
           Trusted By 5000+ Customers.{" "}
           {/* <a
