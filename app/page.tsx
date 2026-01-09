@@ -12,6 +12,7 @@ import TrophyCabinetSection from "./components/TrophyCabinetSection";
 import DesignSessionSection from "./components/DesignSessionSection";
 import FAQSection from "./components/FAQSection";
 import Footer from "./components/Footer";
+import CTASection from "./components/about/CTASection";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <LivspaceHomesSection />
       <TrophyCabinetSection />
       <FAQSection />
+      <CTASection />
       <Footer />
     </div>
   );

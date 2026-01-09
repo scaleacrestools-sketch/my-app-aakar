@@ -3,8 +3,18 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#6D3A22] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <footer className="bg-[#6D3A22] text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div 
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage: 'url(/pattern/flip-2.svg)',
+          backgroundSize: '600px 600px',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: '0 0',
+        }}
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
@@ -118,7 +128,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/20">
+      <div className="border-t border-white/20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm text-gray-300">
