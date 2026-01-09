@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -58,7 +58,7 @@ const cities: CityData[] = [
   },
 ];
 
-export default function CitiesPage() {
+function CitiesContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const cityParam = searchParams.get("city");
@@ -85,8 +85,7 @@ export default function CitiesPage() {
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-x-hidden bg-stone-50">
-      <Navbar />
+    <>
 
       {!selectedCity ? (
         <div className="pt-[104px] sm:pt-[108px] min-h-screen">
@@ -395,6 +394,24 @@ export default function CitiesPage() {
         )}
 
       <Footer />
+    </>
+  );
+}
+
+export default function CitiesPage() {
+  return (
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-stone-50">
+      <Navbar />
+      <Suspense fallback={
+        <div className="pt-[104px] sm:pt-[108px] min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#6D3A22] mx-auto"></div>
+            <p className="mt-4 text-stone-600">Loading...</p>
+          </div>
+        </div>
+      }>
+        <CitiesContent />
+      </Suspense>
     </div>
   );
 }
