@@ -25,12 +25,12 @@ export default function Hero() {
           Est. 2020
         </span>
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight px-2 animate-fade-in-up-delay">
-          Curating Silence <br /> & Space
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-up-delay">
+        Creating Homes That Reflect You
         </h1>
 
-        <p className="text-stone-200 text-sm sm:text-base md:text-lg lg:text-xl font-light max-w-2xl mx-auto leading-relaxed px-2 animate-fade-in-up-delay-2">
-          We design interiors that breathe. Where architecture meets emotion, and every detail tells a quiet story of luxury.
+        <p className="text-stone-200 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
+        At Aakar Interior, we believe your home should be more than just beautiful – it should work perfectly for your family&apos;s lifestyle.
         </p>
       </div>
     </section>
