@@ -1,17 +1,63 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+const PABBLY_WEBHOOK_URL = "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZkMDYzZjA0Mzc1MjZmNTUzMjUxMzIi_pc";
+
 export default function ContactUsPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
       document.documentElement.style.scrollBehavior = "auto";
     };
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      service: formData.get("service"),
+      message: formData.get("message") || "",
+    };
+
+    try {
+      const response = await fetch(PABBLY_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        (e.target as HTMLFormElement).reset();
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000);
+      } else {
+        setSubmitStatus("error");
+        setTimeout(() => setSubmitStatus(null), 5000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden bg-stone-50">
@@ -138,38 +184,32 @@ export default function ContactUsPage() {
             {/* Contact Form */}
             <div className="bg-white p-8 md:p-12 shadow-sm border border-stone-100">
               <h3 className="text-2xl font-bold text-stone-900 mb-8">Project Inquiry</h3>
+              {submitStatus === "success" && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-800 rounded">
+                  Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.
+                </div>
+              )}
+              {submitStatus === "error" && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-800 rounded">
+                  There was an error sending your message. Please try again or contact us directly.
+                </div>
+              )}
               <form
                 className="space-y-6"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // Handle form submission
-                }}
+                onSubmit={handleSubmit}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="firstName" className="text-xs uppercase tracking-widest text-stone-500">
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      required
-                      className="w-full border-b border-stone-300 py-2 text-stone-900 focus:outline-none focus:border-stone-900 transition-colors bg-transparent"
-                      placeholder="Jane"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="lastName" className="text-xs uppercase tracking-widest text-stone-500">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      required
-                      className="w-full border-b border-stone-300 py-2 text-stone-900 focus:outline-none focus:border-stone-900 transition-colors bg-transparent"
-                      placeholder="Doe"
-                    />
-                  </div>
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-xs uppercase tracking-widest text-stone-500">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full border-b border-stone-300 py-2 text-stone-900 focus:outline-none focus:border-stone-900 transition-colors bg-transparent"
+                    placeholder="Your name"
+                  />
                 </div>
 
                 <div className="space-y-2">
@@ -179,7 +219,9 @@ export default function ContactUsPage() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     className="w-full border-b border-stone-300 py-2 text-stone-900 focus:outline-none focus:border-stone-900 transition-colors bg-transparent"
                     placeholder="jane@example.com"
                   />
@@ -192,9 +234,13 @@ export default function ContactUsPage() {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     required
+                    pattern="[0-9]{10}"
+                    maxLength={10}
+                    inputMode="numeric"
                     className="w-full border-b border-stone-300 py-2 text-stone-900 focus:outline-none focus:border-stone-900 transition-colors bg-transparent"
-                    placeholder="+91 1234567890"
+                    placeholder="1234567890"
                   />
                 </div>
 
@@ -204,6 +250,7 @@ export default function ContactUsPage() {
                   </label>
                   <select
                     id="service"
+                    name="service"
                     required
                     className="w-full border-b border-stone-300 py-2 text-stone-900 focus:outline-none focus:border-stone-900 transition-colors bg-transparent"
                   >
@@ -224,8 +271,8 @@ export default function ContactUsPage() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
-                    required
                     className="w-full border-b border-stone-300 py-2 text-stone-900 focus:outline-none focus:border-stone-900 transition-colors bg-transparent resize-none"
                     placeholder="Tell us about your project..."
                   ></textarea>
@@ -233,9 +280,10 @@ export default function ContactUsPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#D2A68A] hover:bg-[#C4957A] text-white py-4 mt-4 uppercase tracking-widest text-xs font-bold transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#D2A68A] hover:bg-[#C4957A] disabled:bg-stone-400 disabled:cursor-not-allowed text-white py-4 mt-4 uppercase tracking-widest text-xs font-bold transition-colors"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>

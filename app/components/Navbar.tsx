@@ -4,13 +4,60 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const PABBLY_WEBHOOK_URL = "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZkMDYzZjA0Mzc1MjZmNTUzMjUxMzIi_pc";
+
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [showConsultModal, setShowConsultModal] = useState(false);
   const [showCitiesMobile, setShowCitiesMobile] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
 
   const toggleDropdown = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name);
+  };
+
+  const handleConsultFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("consult-name") || "",
+      email: formData.get("consult-email"),
+      phone: formData.get("consult-number"),
+      service: "Consultation",
+      message: formData.get("consult-message") || "",
+    };
+
+    try {
+      const response = await fetch(PABBLY_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        (e.target as HTMLFormElement).reset();
+        setTimeout(() => {
+          setShowConsultModal(false);
+          setSubmitStatus(null);
+        }, 2000);
+      } else {
+        setSubmitStatus("error");
+        setTimeout(() => setSubmitStatus(null), 5000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -99,7 +146,7 @@ export default function Navbar() {
                 </div>
 
                 <Link
-                  href="/coming-soon"
+                  href="/projects"
                   className="text-gray-700 hover:text-gray-900 font-medium text-sm"
                 >
                   Projects
@@ -308,7 +355,7 @@ export default function Navbar() {
               )}
             </div>
             <Link
-              href="/coming-soon"
+              href="/projects"
               className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
             >
               Projects
@@ -448,12 +495,19 @@ export default function Navbar() {
             
             {/* Form Content */}
             <div className="p-6">
+              {submitStatus === "success" && (
+                <div className="mb-4 p-3 bg-green-50 border border-green-200 text-green-800 rounded text-sm">
+                  Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.
+                </div>
+              )}
+              {submitStatus === "error" && (
+                <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-800 rounded text-sm">
+                  There was an error sending your message. Please try again or contact us directly.
+                </div>
+              )}
             <form
               className="space-y-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setShowConsultModal(false);
-              }}
+              onSubmit={handleConsultFormSubmit}
             >
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="consult-name">
@@ -461,9 +515,10 @@ export default function Navbar() {
                 </label>
                 <input
                   id="consult-name"
+                  name="consult-name"
                   type="text"
                   required
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#D2A68A]"
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D2A68A]"
                   placeholder="Your name"
                 />
               </div>
@@ -473,10 +528,14 @@ export default function Navbar() {
                 </label>
                 <input
                   id="consult-number"
+                  name="consult-number"
                   type="tel"
                   required
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#D2A68A]"
-                  placeholder="Your phone number"
+                  pattern="[0-9]{10}"
+                  maxLength={10}
+                  inputMode="numeric"
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D2A68A]"
+                  placeholder="1234567890"
                 />
               </div>
               <div>
@@ -485,9 +544,11 @@ export default function Navbar() {
                 </label>
                 <input
                   id="consult-email"
+                  name="consult-email"
                   type="email"
                   required
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#D2A68A]"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D2A68A]"
                   placeholder="you@example.com"
                 />
               </div>
@@ -497,17 +558,18 @@ export default function Navbar() {
                 </label>
                 <textarea
                   id="consult-message"
-                  required
+                  name="consult-message"
                   rows={3}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#D2A68A] resize-none"
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D2A68A] resize-none"
                   placeholder="How can we help?"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#D2A68A] hover:bg-[#C4957A] text-white font-semibold py-2.5 rounded-md text-sm transition-colors"
+                disabled={isSubmitting}
+                className="w-full bg-[#D2A68A] hover:bg-[#C4957A] disabled:bg-stone-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 rounded-md text-sm transition-colors"
               >
-                Submit
+                {isSubmitting ? "Sending..." : "Submit"}
               </button>
             </form>
             </div>
