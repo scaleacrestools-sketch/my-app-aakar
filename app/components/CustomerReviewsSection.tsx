@@ -32,18 +32,17 @@ const reviews = [
 
 export default function CustomerReviewsSection() {
   return (
-    <section className="bg-white py-6 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="py-6 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{
+      background: 'linear-gradient(to bottom, #faf7f4, #ffffff)',
+    }}>
       {/* Background Pattern */}
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
-          backgroundImage: `
-            linear-gradient(90deg, #6D3A22 1px, transparent 1px),
-            linear-gradient(180deg, #6D3A22 1px, transparent 1px),
-            radial-gradient(circle at 1px 1px, #D2A68A 0.5px, transparent 0)
-          `,
-          backgroundSize: '80px 80px, 80px 80px, 40px 40px',
-          backgroundPosition: '0 0, 0 0, 0 0',
+          backgroundImage: 'url(/pattern/flip.svg)',
+          backgroundSize: '600px 600px',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: '0 0',
         }}
       />
       <div className="max-w-7xl mx-auto relative z-10">
