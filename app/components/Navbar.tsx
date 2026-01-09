@@ -93,14 +93,14 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
                 <Link
                   href="/about-us"
-                  className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm"
+                  className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm uppercase"
                 >
                   About
                 </Link>
 
                 <Link
                   href="/services"
-                  className="text-gray-700 hover:text-gray-900 font-medium text-sm"
+                  className="text-gray-700 hover:text-gray-900 font-medium text-sm uppercase"
                 >
                   Services
                 </Link>
@@ -108,7 +108,7 @@ export default function Navbar() {
                 <div className="relative">
                   <button
                     onClick={() => toggleDropdown("cities")}
-                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer"
+                    className="flex items-center gap-1 text-gray-700 hover:text-gray-900 font-medium text-sm cursor-pointer uppercase"
                   >
                     Cities
                     <svg
@@ -132,21 +132,21 @@ export default function Navbar() {
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D2A68A] transition-colors"
                         onClick={() => setOpenDropdown(null)}
                       >
-                        Delhi
+                        DELHI
                       </Link>
                       <Link
                         href="/cities?city=agra"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D2A68A] transition-colors"
                         onClick={() => setOpenDropdown(null)}
                       >
-                        Agra
+                        AGRA
                       </Link>
                       <Link
                         href="/cities?city=mathura"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D2A68A] transition-colors"
                         onClick={() => setOpenDropdown(null)}
                       >
-                        Mathura
+                        MATHURA
                       </Link>
                     </div>
                   )}
@@ -154,14 +154,14 @@ export default function Navbar() {
 
                 <Link
                   href="/projects"
-                  className="text-gray-700 hover:text-gray-900 font-medium text-sm"
+                  className="text-gray-700 hover:text-gray-900 font-medium text-sm uppercase"
                 >
                   Projects
                 </Link>
 
                 <Link
                   href="/contact-us"
-                  className="text-gray-700 hover:text-gray-900 font-medium text-sm"
+                  className="text-gray-700 hover:text-gray-900 font-medium text-sm uppercase"
                 >
                   Contact Us
                 </Link>
@@ -244,7 +244,7 @@ export default function Navbar() {
                 onClick={() => setShowConsultModal(true)}
                 className="hidden sm:flex bg-[#6D3A22] hover:bg-[#5A2F1A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer transition-colors"
               >
-                CONSULT ONLINE NOW
+                BOOK A FREE PLAN
               </button>
 
               {/* Mobile Menu Button */}
@@ -294,20 +294,20 @@ export default function Navbar() {
           <div className="px-4 py-4 space-y-3">
             <Link
               href="/about-us"
-              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2 uppercase"
             >
               About
             </Link>
             <Link
               href="/services"
-              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2 uppercase"
             >
               Services
             </Link>
             <div>
               <button
                 onClick={() => setShowCitiesMobile(!showCitiesMobile)}
-                className="flex items-center justify-between w-full text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+                className="flex items-center justify-between w-full text-gray-700 hover:text-gray-900 font-medium text-sm py-2 uppercase"
               >
                 Cities
                 <svg
@@ -336,7 +336,7 @@ export default function Navbar() {
                       setOpenDropdown(null);
                     }}
                   >
-                    Delhi
+                    DELHI
                   </Link>
                   <Link
                     href="/cities?city=agra"
@@ -346,7 +346,7 @@ export default function Navbar() {
                       setOpenDropdown(null);
                     }}
                   >
-                    Agra
+                    AGRA
                   </Link>
                   <Link
                     href="/cities?city=mathura"
@@ -356,20 +356,20 @@ export default function Navbar() {
                       setOpenDropdown(null);
                     }}
                   >
-                    Mathura
+                    MATHURA
                   </Link>
                 </div>
               )}
             </div>
             <Link
               href="/projects"
-              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2 uppercase"
             >
               Projects
             </Link>
             <Link
               href="/contact-us"
-              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+              className="block text-gray-700 hover:text-gray-900 font-medium text-sm py-2 uppercase"
             >
               Contact Us
             </Link>
@@ -468,7 +468,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/50 px-4">
           <div className="bg-white w-full max-w-md rounded-lg shadow-xl overflow-hidden relative">
             {/* Header Image */}
-            <div className="relative w-full h-32 md:h-40">
+            <div className="relative w-full h-24 md:h-28">
               <Image
                 src="/3d-rendering-classic-european-dining-room-and-livi-2026-01-07-01-44-53-utc.webp"
                 alt="Contact Us"
@@ -478,11 +478,11 @@ export default function Navbar() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <button
                 onClick={() => setShowConsultModal(false)}
-                className="absolute top-3 right-3 text-white hover:text-gray-200 bg-black/30 hover:bg-black/50 rounded-full p-1.5 transition-colors z-10"
+                className="absolute top-2 right-2 text-white hover:text-gray-200 bg-black/30 hover:bg-black/50 rounded-full p-1.5 transition-colors z-10"
                 aria-label="Close"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -495,13 +495,13 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-              <h3 className="absolute bottom-4 left-4 right-4 text-white text-xl font-semibold">
+              <h3 className="absolute bottom-2 left-3 right-3 text-white text-lg md:text-xl font-semibold uppercase">
                 Get In Touch With Us
               </h3>
             </div>
             
             {/* Form Content */}
-            <div className="p-6">
+            <div className="p-4 md:p-5">
               {submitStatus === "success" && (
                 <div className="mb-4 p-3 bg-green-50 border border-green-200 text-green-800 rounded text-sm">
                   Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.
@@ -513,11 +513,11 @@ export default function Navbar() {
                 </div>
               )}
             <form
-              className="space-y-3"
+              className="space-y-2.5"
               onSubmit={handleConsultFormSubmit}
             >
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="consult-name">
+                <label className="block text-sm font-medium text-gray-700 mb-1 uppercase" htmlFor="consult-name">
                   Name
                 </label>
                 <input
@@ -530,7 +530,7 @@ export default function Navbar() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="consult-number">
+                <label className="block text-sm font-medium text-gray-700 mb-1 uppercase" htmlFor="consult-number">
                   Phone Number
                 </label>
                 <input
@@ -546,7 +546,7 @@ export default function Navbar() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="consult-email">
+                <label className="block text-sm font-medium text-gray-700 mb-1 uppercase" htmlFor="consult-email">
                   Email
                 </label>
                 <input
@@ -560,7 +560,7 @@ export default function Navbar() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="consult-message">
+                <label className="block text-sm font-medium text-gray-700 mb-1 uppercase" htmlFor="consult-message">
                   Message
                 </label>
                 <textarea

@@ -18,7 +18,7 @@ export default function CTASection() {
     const data = {
       name: name,
       email: "",
-      phone: phone,
+      phone: `+91 ${phone}`,
       service: "Get a Quote",
       message: "",
       dateFormatted: new Date().toLocaleDateString("en-US", {
@@ -120,23 +120,28 @@ export default function CTASection() {
                   required
                   className="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#6D3A22]/20 focus:outline-none focus:ring-2 focus:ring-[#6D3A22] focus:border-transparent text-sm text-[#6D3A22] placeholder:text-[#6D3A22]/50 bg-white"
                 />
-                <input
-                  type="tel"
-                  name="phone"
-                  value={phone}
-                  onChange={(e) => {
-                    const value = e.target.value.replace(/\D/g, "");
-                    if (value.length <= 10) {
-                      setPhone(value);
-                    }
-                  }}
-                  placeholder="1234567890"
-                  required
-                  pattern="[0-9]{10}"
-                  maxLength={10}
-                  inputMode="numeric"
-                  className="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#6D3A22]/20 focus:outline-none focus:ring-2 focus:ring-[#6D3A22] focus:border-transparent text-sm text-[#6D3A22] placeholder:text-[#6D3A22]/50 bg-white"
-                />
+                <div className="flex-1 relative">
+                  <div className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 flex items-center pointer-events-none">
+                    <span className="text-sm font-medium text-[#6D3A22]">+91</span>
+                  </div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={phone}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/\D/g, "");
+                      if (value.length <= 10) {
+                        setPhone(value);
+                      }
+                    }}
+                    placeholder="8732606558"
+                    required
+                    pattern="[0-9]{10}"
+                    maxLength={10}
+                    inputMode="numeric"
+                    className="w-full pl-12 sm:pl-14 pr-3 sm:pr-4 py-2 sm:py-2.5 rounded-lg border border-[#6D3A22]/20 focus:outline-none focus:ring-2 focus:ring-[#6D3A22] focus:border-transparent text-sm text-[#6D3A22] placeholder:text-[#6D3A22]/50 bg-white"
+                  />
+                </div>
               </div>
               <button
                 type="submit"
