@@ -2,14 +2,59 @@
 
 import { useState } from "react";
 
+const PABBLY_WEBHOOK_URL = "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZkMDYzZjA0Mzc1MjZmNTUzMjUxMzIi_pc";
+
 export default function CTASection() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", { name, phone });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const data = {
+      name: name,
+      email: "",
+      phone: phone,
+      service: "Get a Quote",
+      message: "",
+      dateFormatted: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    };
+
+    try {
+      const response = await fetch(PABBLY_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setName("");
+        setPhone("");
+        setTimeout(() => setSubmitStatus(null), 5000);
+      } else {
+        setSubmitStatus("error");
+        setTimeout(() => setSubmitStatus(null), 5000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -53,10 +98,22 @@ export default function CTASection() {
               Ready to transform your space?
             </h2>
 
+            {submitStatus === "success" && (
+              <div className="mb-4 p-3 bg-green-50 border border-green-200 text-green-800 rounded text-sm">
+                Thank you! We&apos;ll get back to you soon.
+              </div>
+            )}
+            {submitStatus === "error" && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-800 rounded text-sm">
+                There was an error. Please try again or contact us directly.
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="flex flex-col gap-2 sm:gap-3 max-w-xl mx-auto px-2">
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <input
                   type="text"
+                  name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Enter your name"
@@ -65,18 +122,28 @@ export default function CTASection() {
                 />
                 <input
                   type="tel"
+                  name="phone"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Enter your phone number"
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/\D/g, "");
+                    if (value.length <= 10) {
+                      setPhone(value);
+                    }
+                  }}
+                  placeholder="1234567890"
                   required
+                  pattern="[0-9]{10}"
+                  maxLength={10}
+                  inputMode="numeric"
                   className="flex-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg border border-[#6D3A22]/20 focus:outline-none focus:ring-2 focus:ring-[#6D3A22] focus:border-transparent text-sm text-[#6D3A22] placeholder:text-[#6D3A22]/50 bg-white"
                 />
               </div>
               <button
                 type="submit"
-                className="bg-[#6D3A22] hover:bg-[#5A2F1A] active:bg-[#5A2F1A] text-white px-4 sm:px-6 py-2 sm:py-2.5 uppercase tracking-widest text-xs font-bold transition-colors duration-300 rounded-lg whitespace-nowrap w-full sm:w-auto"
+                disabled={isSubmitting}
+                className="bg-[#6D3A22] hover:bg-[#5A2F1A] active:bg-[#5A2F1A] disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 sm:px-6 py-2 sm:py-2.5 uppercase tracking-widest text-xs font-bold transition-colors duration-300 rounded-lg whitespace-nowrap w-full sm:w-auto"
               >
-                Get a Quote
+                {isSubmitting ? "Submitting..." : "Get a Quote"}
               </button>
             </form>
           </div>

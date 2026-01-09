@@ -29,6 +29,13 @@ export default function Navbar() {
       phone: formData.get("consult-number"),
       service: "Consultation",
       message: formData.get("consult-message") || "",
+      dateFormatted: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
     };
 
     try {
@@ -121,21 +128,21 @@ export default function Navbar() {
                   {openDropdown === "cities" && (
                     <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                       <Link
-                        href="/coming-soon"
+                        href="/cities?city=delhi"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D2A68A] transition-colors"
                         onClick={() => setOpenDropdown(null)}
                       >
                         Delhi
                       </Link>
                       <Link
-                        href="/coming-soon"
+                        href="/cities?city=agra"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D2A68A] transition-colors"
                         onClick={() => setOpenDropdown(null)}
                       >
                         Agra
                       </Link>
                       <Link
-                        href="/coming-soon"
+                        href="/cities?city=mathura"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D2A68A] transition-colors"
                         onClick={() => setOpenDropdown(null)}
                       >
@@ -322,7 +329,7 @@ export default function Navbar() {
               {showCitiesMobile && (
                 <div className="pl-4 space-y-2 mt-2">
                   <Link
-                    href="/coming-soon"
+                    href="/cities?city=delhi"
                     className="block text-gray-600 hover:text-[#D2A68A] text-sm py-1 transition-colors"
                     onClick={() => {
                       setShowCitiesMobile(false);
@@ -332,7 +339,7 @@ export default function Navbar() {
                     Delhi
                   </Link>
                   <Link
-                    href="/coming-soon"
+                    href="/cities?city=agra"
                     className="block text-gray-600 hover:text-[#D2A68A] text-sm py-1 transition-colors"
                     onClick={() => {
                       setShowCitiesMobile(false);
@@ -342,7 +349,7 @@ export default function Navbar() {
                     Agra
                   </Link>
                   <Link
-                    href="/coming-soon"
+                    href="/cities?city=mathura"
                     className="block text-gray-600 hover:text-[#D2A68A] text-sm py-1 transition-colors"
                     onClick={() => {
                       setShowCitiesMobile(false);

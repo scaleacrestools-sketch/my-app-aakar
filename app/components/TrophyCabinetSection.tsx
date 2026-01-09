@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const awards = [
   {
@@ -85,9 +86,12 @@ export default function TrophyCabinetSection() {
                 Honored to be recognized for excellence in interior design and customer satisfaction. These awards inspire us to continue delivering quality, innovation, and beautiful homes across India.
                 </p>
                 <div className="flex justify-center lg:justify-start">
-                  <button className="flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer">
+                  <Link
+                    href="/contact-us"
+                    className="flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer"
+                  >
                     CONSULT ONLINE NOW
-                  </button>
+                  </Link>
                 </div>
               </div>
           </div>

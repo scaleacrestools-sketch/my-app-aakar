@@ -30,6 +30,13 @@ export default function ContactUsPage() {
       phone: formData.get("phone"),
       service: formData.get("service"),
       message: formData.get("message") || "",
+      dateFormatted: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
     };
 
     try {
