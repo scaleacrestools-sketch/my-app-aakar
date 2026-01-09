@@ -105,7 +105,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/aakarinterior/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-[#D2A68A] hover:bg-[#D2A68A] transition-colors"
+                className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-[#6D3A22] hover:bg-[#6D3A22] transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ export default function Footer() {
                 href="https://www.instagram.com/aakarinterior_/?igsh=MXI4bnJxb281MWxzYw%3D%3D#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-[#D2A68A] hover:bg-[#D2A68A] transition-colors"
+                className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center hover:border-[#6D3A22] hover:bg-[#6D3A22] transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">

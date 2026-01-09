@@ -37,7 +37,7 @@ export default function ComingSoon() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 animate-fade-in-up px-2" style={{ animationDelay: "0.4s" }}>
             <Link
               href="/"
-              className="bg-[#D2A68A] hover:bg-[#C4957A] active:bg-[#C4957A] text-white px-6 sm:px-8 py-3 sm:py-4 uppercase tracking-widest text-xs font-bold transition-colors duration-300 rounded-lg text-center min-h-[44px] flex items-center justify-center"
+              className="bg-[#6D3A22] hover:bg-[#5A2F1A] active:bg-[#5A2F1A] text-white px-6 sm:px-8 py-3 sm:py-4 uppercase tracking-widest text-xs font-bold transition-colors duration-300 rounded-lg text-center min-h-[44px] flex items-center justify-center"
             >
               Go to Home
             </Link>

@@ -84,10 +84,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Brand Gradient Button - Premium Luxury Style */
 .btn-brand-gradient {
-  background: linear-gradient(135deg, #8A5A44 0%, #B07D62 30%, #C38E70 60%, #CD9777 100%);
+  background: linear-gradient(135deg, #6D3A22 0%, #7A4528 30%, #8A5233 60%, #9A5F3E 100%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(255, 255, 255, 0.027);
-  box-shadow: 0 4px 12px rgba(138, 90, 68, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(109, 58, 34, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   cursor: pointer;
 }
 

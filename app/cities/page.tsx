@@ -384,7 +384,7 @@ export default function CitiesPage() {
 
                   <Link
                     href="/contact-us"
-                    className="w-full bg-[#D2A68A] hover:bg-[#C4957A] text-white py-2.5 sm:py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center"
+                    className="w-full bg-[#6D3A22] hover:bg-[#5A2F1A] text-white py-2.5 sm:py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center"
                   >
                     Schedule Appointment
                   </Link>

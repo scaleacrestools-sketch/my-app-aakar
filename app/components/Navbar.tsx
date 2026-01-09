@@ -242,7 +242,7 @@ export default function Navbar() {
               {/* CONSULT ONLINE NOW Button */}
               <button
                 onClick={() => setShowConsultModal(true)}
-                className="hidden sm:flex bg-[#D2A68A] hover:bg-[#C4957A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer transition-colors"
+                className="hidden sm:flex bg-[#6D3A22] hover:bg-[#5A2F1A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer transition-colors"
               >
                 CONSULT ONLINE NOW
               </button>
@@ -384,7 +384,7 @@ export default function Navbar() {
             </a> */}
             <button
               onClick={() => setShowConsultModal(true)}
-              className="w-full flex bg-[#D2A68A] hover:bg-[#C4957A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium mt-2 cursor-pointer transition-colors"
+              className="w-full flex bg-[#6D3A22] hover:bg-[#5A2F1A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium mt-2 cursor-pointer transition-colors"
             >
               CONSULT ONLINE NOW
             </button>
@@ -574,7 +574,7 @@ export default function Navbar() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#D2A68A] hover:bg-[#C4957A] disabled:bg-stone-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 rounded-md text-sm transition-colors"
+                className="w-full bg-[#6D3A22] hover:bg-[#5A2F1A] disabled:bg-stone-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 rounded-md text-sm transition-colors"
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>

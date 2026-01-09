@@ -288,7 +288,7 @@ export default function ContactUsPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#D2A68A] hover:bg-[#C4957A] disabled:bg-stone-400 disabled:cursor-not-allowed text-white py-4 mt-4 uppercase tracking-widest text-xs font-bold transition-colors"
+                  className="w-full bg-[#6D3A22] hover:bg-[#5A2F1A] disabled:bg-stone-400 disabled:cursor-not-allowed text-white py-4 mt-4 uppercase tracking-widest text-xs font-bold transition-colors"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
