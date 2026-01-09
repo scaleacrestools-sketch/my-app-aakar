@@ -177,7 +177,7 @@ export default function LivspaceHomesSection() {
                       width: isMobile ? '100%' : `${100 / itemsPerView}%`,
                     }}
                   >
-                    <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] rounded-lg overflow-hidden bg-black">
+                    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[440px] rounded-lg overflow-hidden bg-black">
                       {/* Background image as fallback */}
                       <div className="absolute inset-0">
                         <Image
