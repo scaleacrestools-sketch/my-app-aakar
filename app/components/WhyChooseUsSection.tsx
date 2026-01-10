@@ -12,7 +12,7 @@ export default function WhyChooseUsSection() {
     {
       title: "Commercial",
       image: "/icon/offices.webp",
-      description: "Flat 10-year warranty",
+      description: "Flat 5-year warranty",
     },
     {
       title: "Hospitality",

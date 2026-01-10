@@ -25,7 +25,7 @@ const faqs = [
     id: 4,
     question: "Do you provide warranty?",
     answer:
-      "Yes! We offer a comprehensive 10-year warranty on all modular products covering manufacturing defects and hardware issues. We also provide lifetime after-sales support for any queries or maintenance needs.",
+      "Yes! We offer a comprehensive 5-year warranty on all modular products covering manufacturing defects and hardware issues. We also provide lifetime after-sales support for any queries or maintenance needs.",
   },
   {
     id: 5,

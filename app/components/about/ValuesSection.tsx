@@ -5,7 +5,7 @@ const values = [
     id: "1",
     title: "Quality Without Compromise",
     description:
-      "We use only premium materials and work with skilled craftsmen who take pride in their work. From the hinges on your cabinets to the finish on your walls, every detail meets our high standards. That's why we back our work with a 10-year warranty.",
+      "We use only premium materials and work with skilled craftsmen who take pride in their work. From the hinges on your cabinets to the finish on your walls, every detail meets our high standards. That's why we back our work with a 5-year warranty.",
   },
   {
     id: "2",

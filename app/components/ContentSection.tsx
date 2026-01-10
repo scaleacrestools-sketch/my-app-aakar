@@ -14,7 +14,7 @@ const services = [
   {
     id: 2,
     title: "Quality That Lasts Generations",
-    description: "We source only the finest materials – from imported laminates and hardware to durable plywood and elegant finishes. Every material comes with quality certification and our 10-year warranty for complete peace of mind.",
+    description: "We source only the finest materials – from imported laminates and hardware to durable plywood and elegant finishes. Every material comes with quality certification and our 5-year warranty for complete peace of mind.",
     image: "/demo9-slide-2.webp",
     chip: "Premium Materials",
   },

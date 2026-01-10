@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
               <div className="relative w-24 h-10 sm:w-32 sm:h-12">
                 <Image
-                  src="/AAKAR-COLOR-scaled.webp"
+                  src="/1 (1).png"
                   alt="AAKAR Logo"
                   fill
                   className="object-contain"

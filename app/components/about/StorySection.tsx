@@ -31,7 +31,7 @@ export default function StorySection() {
             <div className="mt-6 sm:mt-8 md:mt-10">
               <div className="relative w-36 sm:w-40 md:w-48 h-12 sm:h-14 md:h-16 opacity-70">
                 <Image
-                  src="/AAKAR-BLACK-scaled.webp"
+                  src="/2 (1).png"
                   alt="AAKAR Signature"
                   fill
                   className="object-contain"
