@@ -242,9 +242,16 @@ export default function Navbar() {
                 {/* CONSULT ONLINE NOW Button */}
                 <button
                   onClick={() => setShowConsultModal(true)}
-                  className="hidden sm:flex bg-[#6D3A22] hover:bg-[#5A2F1A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer transition-colors"
+                  className="hidden sm:flex bg-gradient-to-r from-[#6D3A22] to-[#5A2F1A] text-white font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-md shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 items-center justify-center gap-1.5 group relative overflow-hidden text-xs sm:text-sm whitespace-nowrap"
                 >
-                  BOOK A FREE PLAN
+                  <span className="relative z-10">BOOK A FREE PLAN</span>
+                  <svg className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity" style={{
+                    backgroundImage: 'url(/pattern/flip-3.svg)',
+                    backgroundSize: '200px 200px',
+                  }}></div>
                 </button>
 
                 {/* Mobile Menu Button */}
@@ -384,9 +391,16 @@ export default function Navbar() {
             </a> */}
               <button
                 onClick={() => setShowConsultModal(true)}
-                className="w-full flex bg-[#6D3A22] hover:bg-[#5A2F1A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium mt-2 cursor-pointer transition-colors"
+                className="w-full flex bg-gradient-to-r from-[#6D3A22] to-[#5A2F1A] text-white font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-md shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 items-center justify-center gap-1.5 group relative overflow-hidden text-xs sm:text-sm mt-2"
               >
-                CONSULT ONLINE NOW
+                <span className="relative z-10">CONSULT ONLINE NOW</span>
+                <svg className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity" style={{
+                  backgroundImage: 'url(/pattern/flip-3.svg)',
+                  backgroundSize: '200px 200px',
+                }}></div>
               </button>
             </div>
           </div>
@@ -585,9 +599,20 @@ export default function Navbar() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#6D3A22] hover:bg-[#5A2F1A] disabled:bg-stone-400 disabled:cursor-not-allowed text-white font-semibold py-2.5 rounded-md text-sm transition-colors"
+                  className="w-full bg-gradient-to-r from-[#6D3A22] to-[#5A2F1A] disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-md shadow-sm hover:shadow-md disabled:shadow-none transition-all duration-300 hover:scale-105 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-1.5 group relative overflow-hidden text-xs sm:text-sm"
                 >
-                  {isSubmitting ? "Sending..." : "Submit"}
+                  <span className="relative z-10">{isSubmitting ? "Sending..." : "Submit"}</span>
+                  {!isSubmitting && (
+                    <svg className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  )}
+                  {!isSubmitting && (
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity" style={{
+                      backgroundImage: 'url(/pattern/flip-3.svg)',
+                      backgroundSize: '200px 200px',
+                    }}></div>
+                  )}
                 </button>
               </form>
             </div>

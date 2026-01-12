@@ -88,9 +88,16 @@ export default function TrophyCabinetSection() {
                 <div className="flex justify-center lg:justify-start">
                   <Link
                     href="/contact-us"
-                    className="flex btn-brand-gradient text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium whitespace-nowrap cursor-pointer"
+                    className="flex bg-gradient-to-r from-[#6D3A22] to-[#5A2F1A] text-white font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-md shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 items-center justify-center gap-1.5 group relative overflow-hidden text-xs sm:text-sm whitespace-nowrap"
                   >
-                    CONSULT ONLINE NOW
+                    <span className="relative z-10">CONSULT ONLINE NOW</span>
+                    <svg className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity" style={{
+                      backgroundImage: 'url(/pattern/flip-3.svg)',
+                      backgroundSize: '200px 200px',
+                    }}></div>
                   </Link>
                 </div>
               </div>

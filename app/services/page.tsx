@@ -79,6 +79,35 @@ export default function ServicesPage() {
       <Navbar />
 
       <div className="pt-[80px] sm:pt-[96px] md:pt-[100px]">
+        {/* AI Design Assistant Button */}
+        <section className="py-1.5 sm:py-2 px-4 sm:px-6 lg:px-8 bg-[#F5EDE4] border-b border-[#6D3A22]/10">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-[#6D3A22] to-[#5A2F1A] flex items-center justify-center shadow-sm">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xs sm:text-sm font-bold text-[#6D3A22] leading-tight">AI Design Assistant</h3>
+                  <p className="text-[10px] sm:text-xs text-[#45291cdd] leading-tight">Get instant design recommendations</p>
+                </div>
+              </div>
+              <button className="w-full sm:w-auto px-4 sm:px-5 py-1.5 sm:py-2 bg-gradient-to-r from-[#6D3A22] to-[#5A2F1A] text-white font-semibold text-xs sm:text-sm rounded-md shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center justify-center gap-1.5 group relative overflow-hidden">
+                <span className="relative z-10">Try AI Assistant</span>
+                <svg className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity" style={{
+                  backgroundImage: 'url(/pattern/flip-3.svg)',
+                  backgroundSize: '200px 200px',
+                }}></div>
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* Header */}
         <section className="py-6 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#FAF7F4] relative overflow-hidden">
           {/* Background Pattern */}

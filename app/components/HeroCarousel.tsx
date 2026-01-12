@@ -102,8 +102,15 @@ export default function HeroCarousel() {
         </p>
         <div className="flex justify-center">
           <Link href="/contact-us">
-            <button className="flex bg-[#6D3A22] hover:bg-[#5A2F1A] text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg items-center justify-center gap-1.5 md:gap-2 group text-sm font-medium w-full sm:w-auto cursor-pointer transition-colors">
-              BOOK FREE CONSULTATION
+            <button className="flex bg-gradient-to-r from-[#6D3A22] to-[#5A2F1A] text-white font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-md shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 items-center justify-center gap-1.5 group relative overflow-hidden text-xs sm:text-sm w-full sm:w-auto">
+              <span className="relative z-10">BOOK FREE CONSULTATION</span>
+              <svg className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity" style={{
+                backgroundImage: 'url(/pattern/flip-3.svg)',
+                backgroundSize: '200px 200px',
+              }}></div>
             </button>
           </Link>
         </div>

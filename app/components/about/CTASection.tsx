@@ -146,9 +146,20 @@ export default function CTASection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#6D3A22] hover:bg-[#5A2F1A] active:bg-[#5A2F1A] disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 sm:px-6 py-2 sm:py-2.5 uppercase tracking-widest text-xs font-bold transition-colors duration-300 rounded-lg whitespace-nowrap w-full sm:w-auto"
+                className="bg-gradient-to-r from-[#6D3A22] to-[#5A2F1A] disabled:from-gray-400 disabled:to-gray-500 text-white font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-md shadow-sm hover:shadow-md disabled:shadow-none transition-all duration-300 hover:scale-105 disabled:hover:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-1.5 group relative overflow-hidden text-xs sm:text-sm whitespace-nowrap w-full sm:w-auto"
               >
-                {isSubmitting ? "Submitting..." : "Get a Quote"}
+                <span className="relative z-10">{isSubmitting ? "Submitting..." : "Get a Quote"}</span>
+                {!isSubmitting && (
+                  <svg className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                )}
+                {!isSubmitting && (
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity" style={{
+                    backgroundImage: 'url(/pattern/flip-3.svg)',
+                    backgroundSize: '200px 200px',
+                  }}></div>
+                )}
               </button>
             </form>
           </div>
