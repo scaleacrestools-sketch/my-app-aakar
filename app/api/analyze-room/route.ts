@@ -22,6 +22,11 @@ export async function POST(request: NextRequest) {
 
     const formData = await request.formData();
     const imageFile = formData.get("image") as File;
+    
+    // Get user preferences
+    const roomType = (formData.get("roomType") as string) || "general";
+    const style = (formData.get("style") as string) || "modern";
+    const requests = (formData.get("requests") as string) || "";
 
     if (!imageFile) {
       return NextResponse.json(
@@ -52,6 +57,58 @@ export async function POST(request: NextRequest) {
     const base64Image = buffer.toString("base64");
     const dataUrl = `data:${imageFile.type};base64,${base64Image}`;
 
+    // Build enhanced prompt with user preferences
+    const preferencesText = `
+User Preferences:
+- Room Type: ${roomType}
+- Preferred Design Style: ${style}
+${requests ? `- Additional Requests: ${requests}` : ""}
+`;
+
+    const basePrompt = `You are an expert interior designer. Analyze the ACTUAL room image provided and give SPECIFIC, IMAGE-BASED recommendations. 
+
+CRITICAL: You MUST look at the actual image and describe what you SEE. Do NOT provide generic template suggestions. Every recommendation must be based on what is actually visible in the image.
+
+User Preferences:
+${preferencesText}
+
+INSTRUCTIONS:
+1. First, carefully examine the image and describe what you actually see:
+   - What furniture is currently in the room? (describe specific pieces you see)
+   - What colors are actually present in the walls, furniture, and decor?
+   - What is the current layout and arrangement?
+   - What style does the room currently have? (describe what you observe)
+   - What lighting fixtures or windows are visible?
+   - What specific elements need improvement?
+
+2. Based on what you ACTUALLY SEE in the image, provide specific recommendations:
+   - Suggest changes to the EXISTING furniture placement you see
+   - Recommend color changes based on the CURRENT colors visible
+   - Suggest improvements to the ACTUAL layout shown
+   - Recommend specific furniture pieces that would work with what's already there
+   - Suggest lighting improvements based on the CURRENT lighting situation
+   - Recommend decor that complements what's already in the room
+
+3. Style the recommendations toward ${style} while working with the existing room elements.
+
+4. Make all suggestions specific to what you see in the image - mention specific items, colors, or areas visible in the photo.
+
+DO NOT:
+- Provide generic template responses
+- Make assumptions about what might be in the room
+- Give suggestions that don't reference the actual image content
+- Use placeholder text or generic descriptions
+
+DO:
+- Describe exactly what you see in the image
+- Reference specific visible elements in your recommendations
+- Provide concrete, actionable suggestions based on the actual room
+- Work with the existing elements visible in the photo
+
+${requests ? `Additionally, address this specific request: ${requests}` : ""}
+
+Provide your analysis in a clear, structured format that directly references what you see in the image.`;
+
     // Use OpenAI Vision API to analyze the room
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
@@ -61,18 +118,7 @@ export async function POST(request: NextRequest) {
           content: [
             {
               type: "text",
-              text: `You are an expert interior designer. Analyze this room image and provide detailed interior design suggestions. Include:
-              
-1. Current room assessment (style, colors, layout, furniture)
-2. Design style recommendations (modern, contemporary, classic, minimalist, etc.)
-3. Color palette suggestions that would work well
-4. Furniture recommendations (types, placement, styles)
-5. Lighting suggestions
-6. Decor and accessory ideas
-7. Specific improvements and enhancements
-8. Any space optimization tips
-
-Please provide comprehensive, professional interior design advice in a clear, structured format.`,
+              text: basePrompt,
             },
             {
               type: "image_url",
@@ -91,35 +137,41 @@ Please provide comprehensive, professional interior design advice in a clear, st
     // Generate interior design visualization images using DALL-E
     // Extract key design elements from suggestions to create a prompt
     let imageGenerationPrompt = "";
-    let generatedImages: string[] = [];
+    const generatedImages: string[] = [];
 
     // Extract key information from suggestions for image generation
-    // Look for design style, colors, and key elements mentioned in the analysis
+    // Use user's preferred style, or extract from suggestions if not provided
     const suggestionsLower = suggestions.toLowerCase();
     
-    // Extract design style
-    let designStyle = "modern";
-    if (suggestionsLower.includes("contemporary")) designStyle = "contemporary";
-    else if (suggestionsLower.includes("classic")) designStyle = "classic";
-    else if (suggestionsLower.includes("minimalist")) designStyle = "minimalist";
-    else if (suggestionsLower.includes("traditional")) designStyle = "traditional";
-    else if (suggestionsLower.includes("luxury")) designStyle = "luxury";
-    else if (suggestionsLower.includes("scandinavian")) designStyle = "scandinavian";
+    // Use user's preferred style, or extract from suggestions
+    let designStyle = style.toLowerCase();
+    if (designStyle === "general" || !designStyle) {
+      // Fallback to extracting from suggestions
+      if (suggestionsLower.includes("contemporary")) designStyle = "contemporary";
+      else if (suggestionsLower.includes("classic")) designStyle = "classic";
+      else if (suggestionsLower.includes("minimalist")) designStyle = "minimalist";
+      else if (suggestionsLower.includes("traditional")) designStyle = "traditional";
+      else if (suggestionsLower.includes("luxury")) designStyle = "luxury";
+      else if (suggestionsLower.includes("scandinavian")) designStyle = "scandinavian";
+      else designStyle = "modern";
+    }
 
-    // Create a detailed prompt for DALL-E 3 based on the analysis
+    // Create a detailed prompt for DALL-E 3 based on the analysis and user preferences
     // DALL-E 3 has a 1000 character limit for prompts
     const keyRecommendations = suggestions
       .replace(/\n/g, ' ')
       .replace(/\d+\./g, '') // Remove numbered lists
-      .substring(0, 600)
+      .substring(0, 500)
       .trim();
     
-    // Build prompt within character limit
-    const basePrompt = `Professional interior design visualization, ${designStyle} style room, ${keyRecommendations}`;
+    // Build prompt with user preferences
+    const roomTypeText = roomType !== "general" ? `${roomType}, ` : "";
+    const requestsText = requests ? `, ${requests}` : "";
+    const basePromptForImage = `Professional interior design visualization of a ${roomTypeText}${designStyle} style room${requestsText}. ${keyRecommendations}`;
     const qualityAppend = `. Beautiful furniture, elegant lighting, sophisticated colors, cozy atmosphere, photorealistic, high-end photography, 4K quality`;
     
     // Ensure total length is under 1000 characters
-    imageGenerationPrompt = (basePrompt + qualityAppend).substring(0, 1000);
+    imageGenerationPrompt = (basePromptForImage + qualityAppend).substring(0, 1000);
 
     try {
       // Generate interior design image using DALL-E 3
@@ -134,7 +186,7 @@ Please provide comprehensive, professional interior design advice in a clear, st
       if (imageResponse.data && imageResponse.data[0]?.url) {
         generatedImages.push(imageResponse.data[0].url);
       }
-    } catch (imageError: any) {
+    } catch (imageError: unknown) {
       console.error("Error generating images:", imageError);
       // Continue even if image generation fails - we still have text suggestions
     }
@@ -144,28 +196,31 @@ Please provide comprehensive, professional interior design advice in a clear, st
       suggestions,
       generatedImages: generatedImages.length > 0 ? generatedImages : null,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error analyzing room:", error);
+    
+    // Type guard for error handling
+    const errorObj = error as { code?: string; status?: number; message?: string; type?: string };
     
     // Handle specific OpenAI API errors - check multiple ways the error might be structured
     const isOpenAIError = error instanceof OpenAI.APIError || 
-                         error.code === 'invalid_api_key' || 
-                         error.status === 401 ||
-                         (error.message && error.message.includes('API key')) ||
-                         error.type === 'invalid_request_error';
+                         errorObj.code === 'invalid_api_key' || 
+                         errorObj.status === 401 ||
+                         (errorObj.message && errorObj.message.includes('API key')) ||
+                         errorObj.type === 'invalid_request_error';
 
     if (isOpenAIError) {
-      const statusCode = error.status || 401;
+      const statusCode = errorObj.status || 401;
       let errorMessage = "OpenAI API authentication failed";
-      let details = error.message || "Invalid API key";
+      let details = errorObj.message || "Invalid API key";
 
-      if (error.code === 'invalid_api_key' || statusCode === 401 || error.message?.includes('Incorrect API key')) {
+      if (errorObj.code === 'invalid_api_key' || statusCode === 401 || errorObj.message?.includes('Incorrect API key')) {
         errorMessage = "Invalid OpenAI API Key";
         details = "The provided API key is incorrect or has been revoked. Please verify your API key at https://platform.openai.com/account/api-keys and ensure it's correctly set in your .env.local file. Make sure you're using a valid secret key (starts with 'sk-') and not a project key or organization key.";
-      } else if (error.status === 429) {
+      } else if (errorObj.status === 429) {
         errorMessage = "OpenAI API Rate Limit";
         details = "You've exceeded the rate limit for OpenAI API. Please try again later.";
-      } else if (error.status === 402) {
+      } else if (errorObj.status === 402) {
         errorMessage = "OpenAI API Payment Required";
         details = "Your OpenAI account requires payment. Please add billing information at https://platform.openai.com/account/billing";
       }
@@ -174,7 +229,7 @@ Please provide comprehensive, professional interior design advice in a clear, st
         {
           error: errorMessage,
           details: details,
-          code: error.code || 'invalid_api_key',
+          code: errorObj.code || 'invalid_api_key',
         },
         { status: statusCode }
       );
@@ -184,7 +239,7 @@ Please provide comprehensive, professional interior design advice in a clear, st
     return NextResponse.json(
       {
         error: "Failed to analyze room image",
-        details: error.message || "Unknown error occurred",
+        details: errorObj.message || "Unknown error occurred",
       },
       { status: 500 }
     );

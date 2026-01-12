@@ -37,6 +37,24 @@ button {
   cursor: pointer;
 }
 
+/* Fix for select dropdowns in modals */
+select {
+  position: relative;
+  z-index: 1;
+  color: #111827 !important; /* Dark gray-900 for better visibility */
+}
+
+select option {
+  color: #111827 !important; /* Dark text for options */
+  background-color: white;
+  padding: 8px;
+}
+
+select:focus {
+  z-index: 9999;
+  position: relative;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 600;

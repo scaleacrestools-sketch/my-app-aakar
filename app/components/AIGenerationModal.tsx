@@ -18,6 +18,9 @@ export default function AIGenerationModal({
   const [suggestions, setSuggestions] = useState<string | null>(null);
   const [generatedImages, setGeneratedImages] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [roomType, setRoomType] = useState<string>("general");
+  const [style, setStyle] = useState<string>("modern");
+  const [requests, setRequests] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,6 +66,11 @@ export default function AIGenerationModal({
     try {
       const formData = new FormData();
       formData.append("image", imageFile);
+      formData.append("roomType", roomType);
+      formData.append("style", style);
+      if (requests.trim()) {
+        formData.append("requests", requests.trim());
+      }
 
       const response = await fetch("/api/analyze-room", {
         method: "POST",
@@ -100,6 +108,9 @@ export default function AIGenerationModal({
     setSuggestions(null);
     setGeneratedImages([]);
     setError(null);
+    setRoomType("general");
+    setStyle("modern");
+    setRequests("");
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
@@ -199,6 +210,91 @@ export default function AIGenerationModal({
           {/* Selected Image Preview - Show when image is selected and no suggestions yet, or when analyzing */}
           {selectedImage && !suggestions && (
             <div className="space-y-4">
+              {/* Preferences Form */}
+              <div className="bg-gray-50 rounded-lg p-4 md:p-6 border border-gray-200 space-y-4">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  Design Preferences
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Room Type */}
+                  <div className="relative">
+                    <label htmlFor="roomType" className="block text-sm font-medium text-gray-700 mb-2">
+                      Room Type
+                    </label>
+                    <div className="relative">
+                      <select
+                        id="roomType"
+                        value={roomType}
+                        onChange={(e) => setRoomType(e.target.value)}
+                        className="w-full px-3 py-2 pr-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6D3A22] focus:border-transparent text-sm bg-white text-gray-900 appearance-none cursor-pointer"
+                      >
+                      <option value="general">General</option>
+                      <option value="Bedroom">Bedroom</option>
+                      <option value="Living Room">Living Room</option>
+                      <option value="Dining Room">Dining Room</option>
+                      <option value="Hall">Hall</option>
+                      <option value="Kitchen">Kitchen</option>
+                      <option value="Bathroom">Bathroom</option>
+                      <option value="Study Room">Study Room</option>
+                      <option value="Balcony">Balcony</option>
+                    </select>
+                    <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                    </div>
+                  </div>
+
+                  {/* Design Style */}
+                  <div className="relative">
+                    <label htmlFor="style" className="block text-sm font-medium text-gray-700 mb-2">
+                      Design Style
+                    </label>
+                    <div className="relative">
+                      <select
+                        id="style"
+                        value={style}
+                        onChange={(e) => setStyle(e.target.value)}
+                        className="w-full px-3 py-2 pr-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6D3A22] focus:border-transparent text-sm bg-white text-gray-900 appearance-none cursor-pointer"
+                      >
+                      <option value="modern">Modern</option>
+                      <option value="Minimalist">Minimalist</option>
+                      <option value="Contemporary">Contemporary</option>
+                      <option value="Scandinavian">Scandinavian</option>
+                      <option value="Traditional">Traditional</option>
+                      <option value="Classic">Classic</option>
+                      <option value="Luxury">Luxury</option>
+                      <option value="Rustic">Rustic</option>
+                      <option value="Industrial">Industrial</option>
+                      <option value="Bohemian">Bohemian</option>
+                    </select>
+                    <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Additional Requests */}
+                <div>
+                  <label htmlFor="requests" className="block text-sm font-medium text-gray-700 mb-2">
+                    Additional Requests (Optional)
+                  </label>
+                  <textarea
+                    id="requests"
+                    value={requests}
+                    onChange={(e) => setRequests(e.target.value)}
+                    placeholder="e.g., Add cozy lighting, Include wooden elements, Bright and airy feel..."
+                    rows={3}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6D3A22] focus:border-transparent text-sm resize-none"
+                  />
+                </div>
+              </div>
+
               <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden border-2 border-gray-200">
                 <Image
                   src={selectedImage}
