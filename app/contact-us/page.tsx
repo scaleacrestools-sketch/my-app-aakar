@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import FloatingAIAssistant from "../components/FloatingAIAssistant";
 
 const PABBLY_WEBHOOK_URL = "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZkMDYzZjA0Mzc1MjZmNTUzMjUxMzIi_pc";
 
@@ -311,6 +312,7 @@ export default function ContactUsPage() {
       </div>
 
       <Footer />
+      <FloatingAIAssistant />
     </div>
   );
 }

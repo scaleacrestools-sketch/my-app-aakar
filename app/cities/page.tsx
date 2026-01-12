@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import FloatingAIAssistant from "../components/FloatingAIAssistant";
 
 type CityData = {
   id: string;
@@ -412,6 +413,7 @@ export default function CitiesPage() {
       }>
         <CitiesContent />
       </Suspense>
+      <FloatingAIAssistant />
     </div>
   );
 }

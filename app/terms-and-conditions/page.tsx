@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import FloatingAIAssistant from "../components/FloatingAIAssistant";
 
 export default function TermsAndConditionsPage() {
   useEffect(() => {
@@ -200,6 +201,7 @@ export default function TermsAndConditionsPage() {
       </div>
 
       <Footer />
+      <FloatingAIAssistant />
     </div>
   );
 }

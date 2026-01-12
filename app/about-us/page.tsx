@@ -9,6 +9,7 @@ import ValuesSection from "../components/about/ValuesSection";
 import TeamSection from "../components/about/TeamSection";
 import CTASection from "../components/about/CTASection";
 import Footer from "../components/Footer";
+import FloatingAIAssistant from "../components/FloatingAIAssistant";
 
 export default function AboutUsPage() {
   // Smooth scroll behavior for anchor links
@@ -31,6 +32,7 @@ export default function AboutUsPage() {
         <CTASection />
       </main>
       <Footer />
+      <FloatingAIAssistant />
     </div>
   );
 }

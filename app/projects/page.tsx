@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import FloatingAIAssistant from "../components/FloatingAIAssistant";
 
 type Project = {
   id: string;
@@ -160,6 +161,7 @@ export default function ProjectsPage() {
       </div>
 
       <Footer />
+      <FloatingAIAssistant />
     </div>
   );
 }

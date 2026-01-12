@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import FloatingAIAssistant from "../components/FloatingAIAssistant";
 import Link from "next/link";
 
 export default function ComingSoon() {
@@ -51,6 +52,7 @@ export default function ComingSoon() {
         </div>
       </main>
       <Footer />
+      <FloatingAIAssistant />
     </div>
   );
 }

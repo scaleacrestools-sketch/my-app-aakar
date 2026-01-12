@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import FloatingAIAssistant from "../components/FloatingAIAssistant";
 
 export default function PrivacyPolicyPage() {
   useEffect(() => {
@@ -182,6 +183,7 @@ export default function PrivacyPolicyPage() {
       </div>
 
       <Footer />
+      <FloatingAIAssistant />
     </div>
   );
 }
