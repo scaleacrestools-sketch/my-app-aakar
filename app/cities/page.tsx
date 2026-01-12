@@ -89,13 +89,23 @@ function CitiesContent() {
     <>
 
       {!selectedCity ? (
-        <div className="pt-[104px] sm:pt-[108px] min-h-screen">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 animate-fade-in-up">
+        <div className="pt-[104px] sm:pt-[108px] min-h-screen bg-[#FAF7F4] relative overflow-hidden">
+          {/* Background Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage: 'url(/pattern/flip.svg)',
+              backgroundSize: '600px 600px',
+              backgroundRepeat: 'repeat',
+              backgroundPosition: '0 0',
+            }}
+          />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 animate-fade-in-up relative z-10">
             <div className="text-center mb-16 md:mb-24">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-stone-900 mb-4 md:mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#6D3A22] mb-4 md:mb-6 leading-tight">
                 Our Studios
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-stone-500 font-light max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-[#45291cdd] font-light max-w-2xl mx-auto leading-relaxed">
                 Three cities, three distinct expressions of our design philosophy. Select a location to explore our regional presence.
               </p>
             </div>
@@ -113,7 +123,7 @@ function CitiesContent() {
                   }}
                 >
                   <div className="aspect-[4/5] relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-stone-900/10 to-transparent group-hover:from-stone-900/80 transition-all duration-500 z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#6D3A22]/70 via-[#6D3A22]/20 to-transparent group-hover:from-[#6D3A22]/80 transition-all duration-500 z-10" />
                     <Image
                       src={city.image}
                       alt={city.name}
@@ -132,7 +142,7 @@ function CitiesContent() {
                     <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
                         <svg
-                          className="w-5 h-5 text-[#D2A68A]"
+                          className="w-5 h-5 text-[#6D3A22]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -147,11 +157,16 @@ function CitiesContent() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-6 md:p-8 bg-white">
-                    <p className="text-stone-600 text-sm md:text-base line-clamp-3 mb-6 leading-relaxed min-h-[4.5rem]">
+                  <div className="p-6 md:p-8 bg-white relative overflow-hidden">
+                    {/* Card Pattern */}
+                    <div 
+                      className="absolute inset-0 opacity-[0.02] pointer-events-none"
+
+                    />
+                    <p className="text-[#45291cdd] text-sm md:text-base line-clamp-3 mb-6 leading-relaxed min-h-[4.5rem] relative z-10">
                       {city.description}
                     </p>
-                    <span className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-stone-900 group-hover:text-[#D2A68A] transition-colors">
+                    <span className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#6D3A22] group-hover:text-[#5A2F1A] transition-colors relative z-10">
                       Visit Studio
                       <svg
                         className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300"
@@ -186,23 +201,23 @@ function CitiesContent() {
                 priority
                 quality={95}
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-stone-900/50 via-stone-900/40 to-stone-900/60" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#6D3A22]/60 via-[#6D3A22]/50 to-[#6D3A22]/70" />
               <div className="absolute inset-0 flex items-center justify-center pt-[104px] sm:pt-[108px]">
                 <div className="text-center text-white px-4 animate-fade-in-up">
-                  <p className="text-xs sm:text-sm md:text-base lg:text-lg uppercase tracking-[0.3em] mb-3 md:mb-5 font-medium text-stone-200">
+                  <p className="text-xs sm:text-sm md:text-base lg:text-lg uppercase tracking-[0.3em] mb-3 md:mb-5 font-medium text-white/90">
                     AAKAR Interior
                   </p>
-                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-3 md:mb-4 drop-shadow-2xl leading-tight">
+                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-3 md:mb-4 drop-shadow-2xl leading-tight text-white">
                     {selectedCity.name}
                   </h1>
-                  <p className="text-sm sm:text-base md:text-lg text-stone-300 font-light italic max-w-xl mx-auto">
+                  <p className="text-sm sm:text-base md:text-lg text-white/90 font-light italic max-w-xl mx-auto">
                     {selectedCity.tagline}
                   </p>
                 </div>
               </div>
               <button
                 onClick={handleBackClick}
-                className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-12 flex items-center space-x-2 text-white/90 hover:text-white transition-all duration-300 bg-black/30 hover:bg-black/50 backdrop-blur-md px-4 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-12 flex items-center space-x-2 text-white/90 hover:text-white transition-all duration-300 bg-[#6D3A22]/40 hover:bg-[#6D3A22]/60 backdrop-blur-md px-4 sm:px-5 py-2.5 sm:py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5"
@@ -223,29 +238,34 @@ function CitiesContent() {
               </button>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden">
+              {/* Background Pattern */}
+              <div 
+                className="absolute inset-0 opacity-[0.04] pointer-events-none"
+
+              />
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 relative z-10">
                 <div className="space-y-8 md:space-y-10">
                   <div>
-                    <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#D2A68A] mb-3 block">
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#6D3A22] mb-3 block opacity-80">
                       About Our Studio
                     </span>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 mb-6 md:mb-8 leading-tight">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#6D3A22] mb-6 md:mb-8 leading-tight">
                       {selectedCity.tagline}
                     </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-stone-600 font-light leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl text-[#45291cdd] font-light leading-relaxed">
                       {selectedCity.description}
                     </p>
                   </div>
 
-                  <div className="pt-6 md:pt-8 border-t border-stone-200">
-                    <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-stone-400 mb-6">
+                  <div className="pt-6 md:pt-8 border-t border-[#6D3A22]/20">
+                    <h3 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#45291cdd] mb-6 opacity-80">
                       Our Specializations
                     </h3>
                     <ul className="space-y-4">
                       {selectedCity.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start text-stone-700 group">
-                          <span className="w-2 h-2 bg-[#D2A68A] rounded-full mr-4 mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                        <li key={idx} className="flex items-start text-[#45291cdd] group">
+                          <span className="w-2 h-2 bg-[#6D3A22] rounded-full mr-4 mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                           <span className="text-base sm:text-lg font-medium flex-1 leading-relaxed">
                             {feature}
                           </span>
@@ -255,21 +275,26 @@ function CitiesContent() {
                   </div>
                 </div>
 
-                <div className="bg-white p-5 sm:p-6 md:p-8 rounded-2xl border border-stone-200 shadow-xl lg:-mt-2 md:-mt-16 relative z-10 hover:shadow-2xl transition-shadow duration-300">
-                  <div className="mb-4 md:mb-5">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-stone-900 mb-0.5">
+                <div className="bg-white p-5 sm:p-6 md:p-8 rounded-2xl border border-[#6D3A22]/10 shadow-xl lg:-mt-2 md:-mt-16 relative z-10 hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                  {/* Card Pattern */}
+                  <div 
+                    className="absolute inset-0 opacity-[0.02] pointer-events-none"
+
+                  />
+                  <div className="mb-4 md:mb-5 relative z-10">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#6D3A22] mb-0.5">
                       Contact Information
                     </h3>
-                    <p className="text-[10px] sm:text-xs text-stone-500">
+                    <p className="text-[10px] sm:text-xs text-[#45291cdd]">
                       Get in touch with our team
                     </p>
                   </div>
 
-                  <div className="space-y-2 md:space-y-3 mb-5 md:mb-6">
-                    <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-stone-50 transition-colors group">
-                      <div className="bg-[#D2A68A]/10 p-1.5 md:p-2 rounded-lg group-hover:bg-[#D2A68A]/20 transition-colors flex-shrink-0">
+                  <div className="space-y-2 md:space-y-3 mb-5 md:mb-6 relative z-10">
+                    <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-[#FAF7F4] transition-colors group">
+                      <div className="bg-[#6D3A22]/10 p-1.5 md:p-2 rounded-lg group-hover:bg-[#6D3A22]/20 transition-colors flex-shrink-0">
                         <svg
-                          className="text-[#D2A68A] w-4 h-4 sm:w-5 sm:h-5"
+                          className="text-[#6D3A22] w-4 h-4 sm:w-5 sm:h-5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -289,19 +314,19 @@ function CitiesContent() {
                         </svg>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-stone-400 mb-1 font-medium">
+                        <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#45291cdd] mb-1 font-medium opacity-80">
                           Visit Us
                         </p>
-                        <p className="text-xs sm:text-sm text-stone-800 leading-relaxed">
+                        <p className="text-xs sm:text-sm text-[#45291cdd] leading-relaxed">
                           {selectedCity.address}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-stone-50 transition-colors group">
-                      <div className="bg-[#D2A68A]/10 p-1.5 md:p-2 rounded-lg group-hover:bg-[#D2A68A]/20 transition-colors flex-shrink-0">
+                    <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-[#FAF7F4] transition-colors group">
+                      <div className="bg-[#6D3A22]/10 p-1.5 md:p-2 rounded-lg group-hover:bg-[#6D3A22]/20 transition-colors flex-shrink-0">
                         <svg
-                          className="text-[#D2A68A] w-4 h-4 sm:w-5 sm:h-5"
+                          className="text-[#6D3A22] w-4 h-4 sm:w-5 sm:h-5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -315,22 +340,22 @@ function CitiesContent() {
                         </svg>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-stone-400 mb-1 font-medium">
+                        <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#45291cdd] mb-1 font-medium opacity-80">
                           Call Us
                         </p>
                         <a
                           href={`tel:${selectedCity.phone.replace(/\s/g, "")}`}
-                          className="text-xs sm:text-sm text-stone-800 hover:text-[#D2A68A] transition-colors font-medium"
+                          className="text-xs sm:text-sm text-[#6D3A22] hover:text-[#5A2F1A] transition-colors font-medium"
                         >
                           {selectedCity.phone}
                         </a>
                       </div>
                     </div>
 
-                    <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-stone-50 transition-colors group">
-                      <div className="bg-[#D2A68A]/10 p-1.5 md:p-2 rounded-lg group-hover:bg-[#D2A68A]/20 transition-colors flex-shrink-0">
+                    <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-[#FAF7F4] transition-colors group">
+                      <div className="bg-[#6D3A22]/10 p-1.5 md:p-2 rounded-lg group-hover:bg-[#6D3A22]/20 transition-colors flex-shrink-0">
                         <svg
-                          className="text-[#D2A68A] w-4 h-4 sm:w-5 sm:h-5"
+                          className="text-[#6D3A22] w-4 h-4 sm:w-5 sm:h-5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -344,22 +369,22 @@ function CitiesContent() {
                         </svg>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-stone-400 mb-1 font-medium">
+                        <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#45291cdd] mb-1 font-medium opacity-80">
                           Email Us
                         </p>
                         <a
                           href={`mailto:${selectedCity.email}`}
-                          className="text-xs sm:text-sm text-stone-800 hover:text-[#D2A68A] transition-colors break-all font-medium"
+                          className="text-xs sm:text-sm text-[#6D3A22] hover:text-[#5A2F1A] transition-colors break-all font-medium"
                         >
                           {selectedCity.email}
                         </a>
                       </div>
                     </div>
 
-                    <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-stone-50 transition-colors group">
-                      <div className="bg-[#D2A68A]/10 p-1.5 md:p-2 rounded-lg group-hover:bg-[#D2A68A]/20 transition-colors flex-shrink-0">
+                    <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-[#FAF7F4] transition-colors group">
+                      <div className="bg-[#6D3A22]/10 p-1.5 md:p-2 rounded-lg group-hover:bg-[#6D3A22]/20 transition-colors flex-shrink-0">
                         <svg
-                          className="text-[#D2A68A] w-4 h-4 sm:w-5 sm:h-5"
+                          className="text-[#6D3A22] w-4 h-4 sm:w-5 sm:h-5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -373,20 +398,27 @@ function CitiesContent() {
                         </svg>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-stone-400 mb-1 font-medium">
+                        <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#45291cdd] mb-1 font-medium opacity-80">
                           Opening Hours
                         </p>
-                        <p className="text-xs sm:text-sm text-stone-800 font-medium">Mon - Sat: 10:00 AM - 7:00 PM</p>
-                        <p className="text-xs text-stone-500 mt-0.5">Sunday: Closed</p>
+                        <p className="text-xs sm:text-sm text-[#45291cdd] font-medium">Mon - Sat: 10:00 AM - 7:00 PM</p>
+                        <p className="text-xs text-[#45291cdd] mt-0.5 opacity-70">Sunday: Closed</p>
                       </div>
                     </div>
                   </div>
 
                   <Link
                     href="/contact-us"
-                    className="w-full bg-[#6D3A22] hover:bg-[#5A2F1A] text-white py-2.5 sm:py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center"
+                    className="w-full bg-gradient-to-r from-[#6D3A22] to-[#5A2F1A] text-white font-semibold px-4 sm:px-5 py-1.5 sm:py-2 rounded-md shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center justify-center gap-1.5 group relative overflow-hidden text-xs sm:text-sm relative z-10"
                   >
-                    Schedule Appointment
+                    <span className="relative z-10">Schedule Appointment</span>
+                    <svg className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity" style={{
+                      backgroundImage: 'url(/pattern/flip-3.svg)',
+                      backgroundSize: '200px 200px',
+                    }}></div>
                   </Link>
                 </div>
               </div>
@@ -401,7 +433,7 @@ function CitiesContent() {
 
 export default function CitiesPage() {
   return (
-    <div className="relative min-h-screen w-full overflow-x-hidden bg-stone-50">
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-white">
       <Navbar />
       <Suspense fallback={
         <div className="pt-[104px] sm:pt-[108px] min-h-screen flex items-center justify-center">

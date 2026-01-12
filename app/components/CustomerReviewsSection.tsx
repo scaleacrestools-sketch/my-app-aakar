@@ -13,7 +13,7 @@ const reviews = [
   {
     id: 2,
     name: "Sunita Pate",
-    location: "Bangalore",
+    location: "Noida",
     image: "/demo5-slide-02.webp",
     title: "Best decision for our new home",
     review: "Aakar Interior designed our entire 3BHK and we couldn't be happier. From the modern living room to the traditional pooja room, every detail was perfect. The after-sales service is excellent – they came back to adjust a wardrobe door within 24 hours. Worth every rupee!",

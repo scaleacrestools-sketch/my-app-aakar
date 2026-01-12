@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CTASection from "../components/about/CTASection";
 import ExperienceCentreSection from "../components/ExperienceCentreSection";
+import FloatingAIAssistant from "../components/FloatingAIAssistant";
 
 const services = [
   {

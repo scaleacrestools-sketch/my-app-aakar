@@ -18,50 +18,50 @@ type Project = {
 const projects: Project[] = [
   {
     id: "1",
-    title: "The Tribeca Loft",
+    title: "Luxury 4BHK Villa, Gurugram",
     category: "Residential",
-    location: "New York, NY",
-    year: "2023",
+    location: "Gurugram, Haryana",
+    year: "2024",
     image: "/project-image/luxury-family-room-2026-01-06-00-54-17-utc.webp",
   },
   {
     id: "2",
-    title: "Aesop Boutique",
+    title: "Modern Office Space, Noida",
     category: "Commercial",
-    location: "Paris, France",
-    year: "2022",
+    location: "Noida, Uttar Pradesh",
+    year: "2024",
     image: "/project-image/beautiful-shot-of-the-modern-style-open-space-offi-2026-01-07-07-20-51-utc.webp",
   },
   {
     id: "3",
-    title: "Casa Minimalista",
+    title: "Contemporary 3BHK Apartment, Delhi",
     category: "Residential",
-    location: "Barcelona, Spain",
-    year: "2023",
+    location: "New Delhi",
+    year: "2024",
     image: "/project-image/dining-table-in-modern-kitchen-and-living-room-2025-04-03-10-40-22-utc.webp",
   },
   {
     id: "4",
-    title: "Hotel de L'O",
-    category: "Hospitality",
-    location: "Copenhagen, Denmark",
-    year: "2021",
+    title: "Premium Showroom Interior, Ghaziabad",
+    category: "Commercial",
+    location: "Ghaziabad, Uttar Pradesh",
+    year: "2023",
     image: "/project-image/interior-of-a-hotel-reception-3d-illustration-2026-01-05-05-03-03-utc.webp",
   },
   {
     id: "5",
-    title: "Studio Noir",
+    title: "Corporate Office Design, Faridabad",
     category: "Commercial",
-    location: "Berlin, Germany",
-    year: "2022",
+    location: "Faridabad, Haryana",
+    year: "2024",
     image: "/project-image/a-modern-empty-canteen-in-an-office-building-2025-04-13-22-46-51-utc.webp",
   },
   {
     id: "6",
-    title: "Hudson Retreat",
+    title: "Elegant 2BHK Home, Noida",
     category: "Residential",
-    location: "Upstate NY",
-    year: "2020",
+    location: "Noida, Uttar Pradesh",
+    year: "2023",
     image: "/project-image/interior-of-modern-house-dining-room-with-glass-t-2026-01-07-05-28-14-utc.webp",
   },
 ];
@@ -82,27 +82,37 @@ export default function ProjectsPage() {
 
       <div className="pt-[104px] sm:pt-[108px] min-h-screen">
         {/* Header */}
-        <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-stone-900 mb-4 md:mb-6 animate-fade-in-up">
-              Selected Works
+        <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#FAF7F4] relative overflow-hidden">
+          {/* Background Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage: 'url(/pattern/flip.svg)',
+              backgroundSize: '600px 600px',
+              backgroundRepeat: 'repeat',
+              backgroundPosition: '0 0',
+            }}
+          />
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#6D3A22] mb-4 md:mb-6 animate-fade-in-up">
+              Our Projects
             </h1>
-            <p className="text-base sm:text-lg text-stone-500 font-light max-w-2xl mx-auto animate-fade-in-up-delay">
-              A curated collection of spaces defined by silence, light, and texture.
+            <p className="text-base sm:text-lg text-[#45291cdd] font-light max-w-2xl mx-auto animate-fade-in-up-delay">
+              Transforming homes and spaces across Delhi NCR with quality interior design solutions. Explore our portfolio of residential and commercial projects.
             </p>
           </div>
         </section>
 
         {/* Filter */}
-        <div className="flex justify-center mb-12 md:mb-16 space-x-4 sm:space-x-6 md:space-x-12 px-4 sm:px-6 overflow-x-auto">
+        <div className="flex justify-center mb-12 md:mb-16 mt-8 md:mt-12 space-x-4 sm:space-x-6 md:space-x-12 px-4 sm:px-6 overflow-x-auto">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 pb-2 whitespace-nowrap ${
+              className={`text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 pb-2 whitespace-nowrap rounded-none ${
                 activeCategory === category
-                  ? "text-stone-900 border-b-2 border-stone-900 font-medium"
-                  : "text-stone-400 hover:text-stone-600 border-b-2 border-transparent"
+                  ? "text-[#6D3A22] border-b-2 border-[#6D3A22] font-medium"
+                  : "text-[#45291cdd] hover:text-[#6D3A22] border-b-2 border-transparent"
               }`}
             >
               {category}
@@ -111,7 +121,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Projects Grid */}
-        <section className="pb-12 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <section className="pb-12 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
           <div
             key={activeCategory}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12"
@@ -143,14 +153,14 @@ export default function ProjectsPage() {
 
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-stone-900 group-hover:text-[#D2A68A] transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#6D3A22] group-hover:text-[#5A2F1A] transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-stone-500 text-xs uppercase tracking-widest mt-1">
+                    <p className="text-[#45291cdd] text-xs uppercase tracking-widest mt-1">
                       {project.location}
                     </p>
                   </div>
-                  <span className="text-stone-400 text-xs font-medium italic ml-4">
+                  <span className="text-[#45291cdd] text-xs font-medium italic ml-4">
                     {project.year}
                   </span>
                 </div>

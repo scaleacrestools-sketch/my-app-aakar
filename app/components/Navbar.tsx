@@ -72,7 +72,7 @@ export default function Navbar() {
       <nav className="fixed top-[22px] sm:top-[28px] left-0 right-0 z-50 bg-white shadow-sm">
         {/* Top Navigation Bar */}
         <div className="border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto ">
             <div className="relative flex items-center justify-between h-18">
               {/* Left: Logo */}
               <div className="flex items-center">

@@ -8,37 +8,37 @@ const homeVideos = [
     id: 1,
     video: "/video/aakar1.mp4",
     thumbnail: "/blank-picture-frames-mockups-on-white-wall-white-2026-01-05-06-03-49-utc.webp",
-    title: "Contemporary 4 BHK penthouse, Noida",
+    title: "Contemporary 4 BHK Penthouse, Noida",
   },
   {
     id: 2,
     video: "/video/aakar2.mp4",
     thumbnail: "/demo9-slide-2.webp",
-    title: "Elegant 2 BHK flat, Mumbai",
+    title: "Elegant 2 BHK Apartment, Gurugram",
   },
   {
     id: 3,
     video: "/video/aakar3.mp4",
     thumbnail: "/3d-rendering-luxury-and-modern-yellow-living-room-2026-01-06-10-37-51-utc.webp",
-    title: "Contemporary 3 BHK house, Gurgaon",
+    title: "Modern 3 BHK Villa, Gurugram",
   },
   {
     id: 4,
     video: "/video/aakar4.mp4",
     thumbnail: "/3d-rendering-tropical-style-resort-suite-living-re-2026-01-06-11-05-14-utc.webp",
-    title: "Modern 3 BHK apartment, Delhi",
+    title: "Luxury 3 BHK Apartment, New Delhi",
   },
   {
     id: 5,
     video: "/video/aakar5.mp4",
     thumbnail: "/3d-rendering-luxury-and-modern-living-room-with-go-2026-01-06-10-38-41-utc.webp",
-    title: "Luxury 5 BHK villa, Bangalore",
+    title: "Premium 5 BHK Villa, Faridabad",
   },
   {
     id: 6,
     video: "/video/aakar6.mp4",
     thumbnail: "/3d-rendering-luxury-and-modern-green-living-room-2026-01-07-06-07-35-utc.webp",
-    title: "Spacious 2 BHK flat, Pune",
+    title: "Spacious 2 BHK Flat, Ghaziabad",
   },
 ];
 

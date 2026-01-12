@@ -21,7 +21,7 @@ const expandedInspirations = [
   },
   {
     id: 4,
-    title: "Homes by Livspace",
+    title: "Modular Kitchen",
     image: "/3d-rendering-luxury-and-modern-living-room-with-go-2026-01-06-10-38-41-utc.webp",
   },
   {
